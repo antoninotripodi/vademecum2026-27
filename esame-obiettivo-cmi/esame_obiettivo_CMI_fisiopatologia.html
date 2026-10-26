@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Perché in quest'ordine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Source+Sans+3:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bordeaux: #7a2a2c;
+    --bordeaux-chiaro: #a8504f;
+    --crema: #f8f5ef;
+    --crema-scura: #efe8dc;
+    --inchiostro: #1f1b18;
+    --grigio: #5d554e;
+  }
+  @page { size: A4; margin: 15mm 16mm 15mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--inchiostro);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 10.2pt;
+    line-height: 1.38;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  p { margin: 0 0 0.55em; text-align: justify; }
+  b, strong { font-weight: 700; }
+
+  /* ---------- testata ---------- */
+  .testata { border-top: 3px solid var(--bordeaux); padding-top: 9px; margin-bottom: 14px; }
+  .sovratitolo {
+    font-family: "Source Sans 3", sans-serif; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 8.5pt; color: var(--bordeaux);
+  }
+  h1 { font-size: 23pt; line-height: 1.12; margin: 4px 0 6px; font-weight: 700; }
+  .sottotitolo { font-style: italic; color: var(--grigio); font-size: 11.5pt; margin: 0; }
+
+  /* ---------- riquadri ---------- */
+  .box {
+    background: var(--crema);
+    border-bottom: 2px solid var(--bordeaux);
+    margin: 0 0 14px;
+    break-inside: avoid;
+  }
+  .box.lungo { break-inside: auto; }
+  .fascia {
+    background: var(--bordeaux); color: #fff;
+    font-family: "Source Sans 3", sans-serif; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    font-size: 9.2pt; padding: 6px 12px;
+  }
+  .corpo { padding: 10px 14px 6px; }
+
+  /* ---------- passi ---------- */
+  .passo { margin: 0 0 16px; }
+  .passo-testa {
+    display: flex; align-items: baseline; gap: 10px;
+    border-bottom: 1px solid var(--bordeaux-chiaro);
+    padding-bottom: 3px; margin-bottom: 7px;
+    break-after: avoid;
+  }
+  .num {
+    font-weight: 700; color: #fff; background: var(--bordeaux);
+    min-width: 22px; height: 22px; border-radius: 2px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 10.5pt; flex: none; position: relative; top: 3px;
+  }
+  .passo-testa h2 { font-size: 12.6pt; margin: 0; font-weight: 700; line-height: 1.25; }
+  .gesto {
+    font-style: italic; color: var(--grigio); margin: 0 0 6px;
+    padding-left: 10px; border-left: 2px solid var(--crema-scura);
+  }
+  .perche {
+    font-family: "Source Sans 3", sans-serif; font-weight: 700;
+    font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--bordeaux); margin-right: 4px;
+  }
+  .nota {
+    background: var(--crema); padding: 7px 11px; margin: 6px 0 4px;
+    border-left: 3px solid var(--bordeaux); font-size: 10pt;
+    break-inside: avoid;
+  }
+  .nota p:last-child { margin-bottom: 0; }
+
+  /* ---------- tabella ---------- */
+  table { width: 100%; border-collapse: collapse; font-size: 9.4pt; margin: 2px 0 6px; }
+  th {
+    font-family: "Source Sans 3", sans-serif; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; font-size: 7.8pt;
+    color: var(--bordeaux); text-align: left;
+    border-bottom: 1.5px solid var(--bordeaux); padding: 4px 5px;
+  }
+  td { padding: 4px 5px; border-bottom: 1px solid var(--crema-scura); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.su { color: var(--bordeaux); font-weight: 700; }
+  td.giu { color: #2f5d73; font-weight: 700; }
+  .legenda { font-size: 8.6pt; color: var(--grigio); font-style: italic; margin: 0; }
+
+  ol.logica { margin: 0 0 6px; padding-left: 1.2em; }
+  ol.logica li { margin-bottom: 4px; text-align: justify; }
+
+  .piede { font-size: 8.4pt; color: var(--grigio); border-top: 1px solid var(--bordeaux); padding-top: 6px; margin-top: 10px; }
+  .piede p { text-align: left; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+
+<header class="testata">
+  <div class="sovratitolo">Vademecum · Cardiologia · Esame obiettivo ragionato</div>
+  <h1>Perché in quest'ordine</h1>
+  <p class="sottotitolo">Le basi fisiopatologiche della sequenza al letto del paziente con soffio sistolico e sospetta cardiomiopatia ipertrofica ostruttiva</p>
+</header>
+
+<section class="box">
+  <div class="fascia">Il principio · un esperimento di emodinamica a letto</div>
+  <div class="corpo">
+    <p>Il soffio della cardiomiopatia ipertrofica ostruttiva (CMIO) nasce da un'ostruzione <b>dinamica</b> del tratto di efflusso del ventricolo sinistro (LVOT): il setto ipertrofico restringe l'efflusso e il lembo anteriore della mitrale, trascinato in avanti dal flusso in sistole (<b>SAM</b>, <i>systolic anterior motion</i>), va a toccare il setto. Il calibro dell'efflusso dipende da quanto è pieno il ventricolo, da quanto forte si contrae e dalla pressione aortica a valle. L'ostruzione dunque <b>cambia di battito in battito</b>, mentre la stenosi aortica è un orifizio <b>fisso</b>.</p>
+    <p>Tutta la sequenza si basa su questa differenza. Facciamo variare una alla volta le tre leve dell'emodinamica, cioè <b>precarico</b>, <b>postcarico</b> e <b>contrattilità</b>, e guardiamo come risponde il soffio. L'ordine segue tre regole:</p>
+    <ol class="logica">
+      <li><b>Prima la condizione basale, poi le perturbazioni.</b> Un effetto si riconosce solo se c'è un termine di confronto stabile (passi&nbsp;1–3).</li>
+      <li><b>Prima le manovre semplici, poi quelle più impegnative.</b> La Valsalva si fa da sdraiati; l'accovacciamento chiede mobilità ed equilibrio; l'handgrip serve solo se resta un dubbio (<span style="white-space:nowrap">passi 4–6</span>).</li>
+      <li><b>Una leva per volta.</b> Il precarico si sposta con Valsalva e accovacciamento, il postcarico con l'handgrip, la contrattilità con il battito post-extrasistolico (<span style="white-space:nowrap">passi 4–7</span>).</li>
+    </ol>
+    <p style="margin-bottom:4px">Regola pratica da ricordare: <b>tutto ciò che rimpicciolisce il ventricolo o abbassa la pressione aortica rinforza il soffio della CMIO</b>. Tutto ciò che lo riempie o alza la pressione aortica lo attenua. Per quasi tutti gli altri soffi vale l'opposto, perché la loro intensità segue la portata.</p>
+  </div>
+</section>
+
+<section class="box">
+  <div class="fascia">Quadro sinottico · le leve e le risposte</div>
+  <div class="corpo">
+    <table>
+      <thead>
+        <tr><th>Manovra</th><th>Leva principale</th><th>CMIO</th><th>Stenosi aortica</th><th>Insuff. mitralica</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Valsalva (fase di sforzo)</td><td>↓ precarico</td><td class="su">↑</td><td class="giu">↓</td><td class="giu">↓ / =</td></tr>
+        <tr><td>Da accovacciato a in piedi</td><td>↓ precarico (± ↓ postcarico)</td><td class="su">↑</td><td class="giu">↓</td><td class="giu">↓ / =</td></tr>
+        <tr><td>Accovacciamento</td><td>↑ precarico, ↑ postcarico</td><td class="giu">↓</td><td class="su">↑ / =</td><td class="su">↑</td></tr>
+        <tr><td>Sollevamento passivo gambe</td><td>↑ precarico</td><td class="giu">↓</td><td class="su">↑</td><td class="su">↑ / =</td></tr>
+        <tr><td>Handgrip isometrico</td><td>↑ postcarico</td><td class="giu">↓</td><td class="giu">↓ / =</td><td class="su">↑</td></tr>
+        <tr><td>Battito post-extrasistolico</td><td>↑ contrattilità, ↑ precarico</td><td class="su">↑ soffio, ↓ polso</td><td class="su">↑ soffio, ↑ polso</td><td>=</td></tr>
+      </tbody>
+    </table>
+    <p class="legenda">↑ il soffio si rinforza · ↓ il soffio si attenua · = invariato. Fa eccezione il prolasso mitralico: come la CMIO, con meno precarico il click compare prima e il soffio si allunga.</p>
+  </div>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">1</span><h2>Decubito supino, tutti i focolai, irradiazione</h2></div>
+  <p class="gesto">Ascolta tutti i focolai; trova il punto di massima intensità e segui il soffio verso la punta, l'ascella e le carotidi.</p>
+  <p><span class="perche">Perché prima</span>In posizione supina il ritorno venoso è stabile e riproducibile. È lo stato di riferimento: ogni manovra successiva verrà confrontata con questo. Se si parte da una manovra, il punto di partenza va perso.</p>
+  <p><span class="perche">Perché l'irradiazione</span>Un soffio si propaga lungo la direzione del getto turbolento e delle strutture che lo trasmettono. In questo senso l'irradiazione indica dove si trova l'ostacolo.</p>
+  <p>Nella <b>stenosi aortica</b> il getto passa la valvola e urta la parete dell'aorta ascendente, per cui il soffio sale al 2° spazio intercostale destro e alle <b>carotidi</b>. Nella <b>CMIO</b> l'ostruzione sta <i>sotto</i> la valvola, dentro il ventricolo. Il soffio è massimo al margine sternale sinistro basso (3°–4° spazio) e verso la punta, e <b>arriva poco alle carotidi</b>. Nell'<b>insufficienza mitralica</b> il getto va indietro, verso l'atrio sinistro (che è posteriore), e si sente in <b>ascella</b>. Attenzione: nella CMIO la mitrale trascinata dal SAM non chiude bene. Spesso si aggiunge quindi un rigurgito mitralico secondario con getto postero-laterale, che porta il soffio anche verso l'ascella.</p>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">2</span><h2>Carotide durante l'ascoltazione; itto in decubito laterale sinistro</h2></div>
+  <p class="gesto">Ascesa carotidea rapida o lenta? Itto sostenuto? doppio?</p>
+  <p><span class="perche">Perché il polso</span>Il soffio dice dove c'è turbolenza; il polso dice <b>quando</b> e <b>quanto</b> sangue esce durante la sistole. Nella <b>stenosi aortica</b> l'orifizio fisso rallenta l'eiezione per tutta la sistole. Ne risulta il <b>polso parvo e tardo</b>: ascesa lenta, picco basso e in ritardo. Nella <b>CMIO</b> all'inizio della sistole l'efflusso è ancora aperto. Un ventricolo ipercontrattile svuota rapidamente il primo terzo della gittata e l'ascesa è <b>rapida e vivace</b>. A metà sistole, quando il SAM chiude l'efflusso, il flusso cala e poi riprende. Ne nasce il polso <b>bisferiens</b> (<i>spike and dome</i>). In pratica un'ascesa vivace accanto a un soffio sistolico rude va già contro una stenosi aortica severa.</p>
+  <p><span class="perche">Perché il laterale sinistro</span>Ruotando il paziente la punta si avvicina alla parete toracica e l'itto si apprezza meglio. Con l'ipertrofia l'itto è <b>sostenuto</b>, perché la parete spessa genera pressione a lungo. Può essere anche <b>doppio o triplo</b>: un primo impulso presistolico dovuto alla contrazione atriale contro un ventricolo rigido (il IV tono che si palpa), poi l'eiezione in due tempi data dall'ostruzione mesosistolica.</p>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">3</span><h2>Campana alla punta, decubito laterale sinistro: il IV tono</h2></div>
+  <p class="gesto">Appoggia la campana senza premere e cerca un tono presistolico cupo.</p>
+  <p><span class="perche">Perché la campana</span>Il IV tono è un suono a <b>bassa frequenza</b> (circa 20–50 Hz). La campana appoggiata leggermente trasmette le basse frequenze. Se la si preme, la pelle tesa fa da membrana e le filtra via.</p>
+  <p><span class="perche">Perché conta</span>Il IV tono nasce quando l'atrio si contrae contro un ventricolo <b>poco distensibile</b>: il sangue si arresta di colpo e mette in vibrazione la parete. Rivela quindi la <b>disfunzione diastolica</b> (ipertrofia, rilasciamento rallentato, fibrosi interstiziale), che nella CMIO c'è quasi sempre, anche senza ostruzione. Il IV tono richiede una sistole atriale efficace, quindi <b>manca in fibrillazione atriale</b>. In un paziente con CMIO la fibrillazione atriale è anche mal tollerata, perché a quel ventricolo viene a mancare proprio il contributo atriale al riempimento.</p>
+  <p><span class="perche">Perché adesso</span>Lo si cerca prima delle manovre, che cambiano frequenza e riempimento e possono farlo scomparire o comparire. Si sfrutta inoltre la posizione laterale sinistra già presa al passo 2.</p>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">4</span><h2>Valsalva: ascolta durante lo sforzo</h2></div>
+  <p class="gesto">Espirazione forzata a glottide chiusa per circa 10–15 secondi; si ascolta nella fase di sforzo, non dopo il rilascio.</p>
+  <p><span class="perche">Fisiologia</span>Spingendo, la pressione intratoracica sale (circa 40 mmHg). Le vene cave intratoraciche vengono compresse e il ritorno venoso crolla. In <b>fase II</b>, la fase di sforzo mantenuto, il ventricolo sinistro si riempie meno e <b>si rimpicciolisce</b>. Il setto e la mitrale si avvicinano, il flusso nell'efflusso diventa più veloce e la forza di trascinamento sui lembi aumenta. Il SAM peggiora e il gradiente sale: <b>il soffio della CMIO si rinforza</b>. Nella stenosi aortica e nella maggior parte degli altri soffi meno precarico vuol dire meno portata e il soffio si attenua.</p>
+  <p><span class="perche">Perché durante e non dopo</span>Al rilascio (fase IV) il sangue trattenuto torna tutto insieme e la pressione aortica ha un'impennata. Ascoltando in quel momento si sente l'effetto opposto.</p>
+  <p><span class="perche">Perché per prima</span>Fra le manovre è quella che disturba meno: si fa da sdraiati, senza cambiare posizione, subito dopo la registrazione basale. Va bene per un primo orientamento, ma da sola non basta. Ha alta specificità e sensibilità modesta, perché molti pazienti non sostengono uno sforzo adeguato.</p>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">5</span><h2>Accovacciamento, poi in piedi di scatto</h2></div>
+  <p class="gesto">30 secondi accovacciato, ascolta; poi in piedi di colpo e ascolta subito. Se non è possibile, sollevamento passivo delle gambe.</p>
+  <p><span class="perche">Accovacciato</span>Flettendo anche e ginocchia si spremono le vene degli arti inferiori: il <b>precarico aumenta</b>. Si piegano anche le arterie femorali e si comprime il letto arterioso, quindi aumentano le resistenze sistemiche e il <b>postcarico</b>. Ventricolo più pieno e pressione aortica più alta allargano l'efflusso e riducono il gradiente: <b>il soffio della CMIO si attenua</b>. Il soffio della stenosi aortica, che segue la portata, si mantiene o aumenta.</p>
+  <p><span class="perche">In piedi di scatto</span>In pochi secondi circa mezzo litro di sangue si sposta negli arti inferiori. Il precarico crolla, la pressione arteriosa cala per un momento e il simpatico reagisce con tachicardia e aumento della contrattilità. Tutti e tre questi fattori peggiorano l'ostruzione, quindi <b>il soffio della CMIO si rinforza</b>. Bisogna ascoltare <b>subito</b>, perché entro poche decine di secondi i riflessi riportano l'emodinamica allo stato di prima.</p>
+  <p><span class="perche">Perché in coppia e in quest'ordine</span>La manovra porta lo stesso ventricolo da un estremo all'altro, da molto pieno a molto vuoto. La differenza di intensità che si ottiene è la più ampia fra le manovre di letto, e ognuna delle due fasi fa da controllo all'altra. Nello studio classico di Lembo e collaboratori (<i>N Engl J Med</i> 1988) il passaggio in piedi aveva la sensibilità più alta per la CMIO (circa 95%). L'accovacciamento con attenuazione del soffio era il segno più specifico.</p>
+  <div class="nota"><p><b>Sollevamento passivo delle gambe.</b> Restituisce al circolo centrale circa 300 mL di sangue venoso. Riproduce soltanto la componente <i>precarico</i> dell'accovacciamento, non il postcarico, perciò l'effetto è più debole ma va nella stessa direzione: il soffio della CMIO si attenua. È il ripiego per anziani, obesi, pazienti con artrosi o instabili.</p></div>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">6</span><h2>Handgrip, se resta il dubbio fra ostruzione e rigurgito</h2></div>
+  <p class="gesto">Stretta isometrica sostenuta (dinamometro o due dita dell'esaminatore) per 1–2 minuti, senza Valsalva.</p>
+  <p><span class="perche">Fisiologia</span>Lo sforzo isometrico attiva il riflesso pressorio muscolare (metaborecettori). Ne derivano aumento delle resistenze periferiche e della pressione arteriosa, cioè del <b>postcarico</b>, con variazioni minime del precarico. È la manovra che isola il postcarico.</p>
+  <p><span class="perche">Perché discrimina</span>Nella <b>CMIO</b> una pressione aortica più alta tiene aperto l'efflusso e riduce il gradiente: <b>il soffio si attenua</b>. Nell'<b>insufficienza mitralica</b> il ventricolo sistolico trova più resistenza davanti e la via di minore resistenza diventa l'atrio sinistro. Aumenta la frazione rigurgitante e <b>il soffio si rinforza</b>. I due soffi possono assomigliarsi (olosistolico o tardivo, alla punta, verso l'ascella) e possono anche coesistere. In questo caso conviene una manovra che li faccia andare in direzioni opposte.</p>
+  <p><span class="perche">Perché tardi</span>Serve solo se rimane un dubbio. Inoltre alza pressione arteriosa e frequenza per qualche minuto, e farla prima altererebbe le manovre successive. È anche la manovra meno sensibile delle tre.</p>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">7</span><h2>Il battito dopo l'extrasistole: soffio e polso insieme</h2></div>
+  <p class="gesto">Se compare un'extrasistole, ascolta il battito che segue la pausa compensatoria e nello stesso istante palpa il polso.</p>
+  <p><span class="perche">Fisiologia</span>Il battito che segue la pausa compensatoria è particolare per tre motivi. (a) La diastole lunga dà <b>più riempimento</b>. (b) Si ha il <b>potenziamento post-extrasistolico</b>: durante la pausa il reticolo sarcoplasmatico si carica di più calcio e la contrazione successiva è più energica. (c) La lunga pausa abbassa la pressione aortica, quindi il <b>postcarico è minore</b>.</p>
+  <p><span class="perche">Perché anche il polso</span>Nelle due malattie il soffio fa la stessa cosa e il polso fa cose opposte. Nella <b>stenosi aortica</b> più forza e più volume producono un soffio più intenso e un polso <b>più ampio</b>, perché passa più sangue. Nella <b>CMIO</b> la contrazione più energica e il postcarico più basso stringono l'efflusso. Il soffio si rinforza ma il polso <b>si riduce</b>, perché cresce il gradiente e diminuisce il sangue che arriva in aorta. È il <b>segno di Brockenbrough-Braunwald-Morrow</b>, descritto al cateterismo, che a letto si coglie con il dito sulla carotide o sulla radiale. Se si ascolta e basta, le due malattie danno lo stesso reperto.</p>
+  <p><span class="perche">Perché in questo punto</span>Non si può provocare: si sfrutta quando capita, anche durante le manovre precedenti. È la sola prova di letto che agisce in modo diretto sulla <b>contrattilità</b>, l'unica leva che le manovre precedenti non toccano.</p>
+</section>
+
+<section class="passo">
+  <div class="passo-testa"><span class="num">8</span><h2>La conferma è ecocardiografica, con le stesse manovre</h2></div>
+  <p class="gesto">Spessore del setto, SAM, gradiente nel tratto di efflusso a riposo e sotto Valsalva o in piedi; se basso, eco da sforzo.</p>
+  <p><span class="perche">Perché l'eco</span>Al letto si fanno inferenze sull'emodinamica. L'eco misura la struttura, cioè lo spessore parietale (diagnosi di CMI nell'adulto con almeno 15 mm, o almeno 13 mm se c'è familiarità), e il meccanismo, cioè il SAM e il contatto mitro-settale. Il Doppler continuo stima il gradiente con l'equazione di Bernoulli semplificata (ΔP = 4v²). Il profilo dell'ostruzione dinamica è tipico: picco tardivo, a forma di pugnale, perché l'ostruzione aumenta man mano che la sistole procede.</p>
+  <p><span class="perche">Perché le stesse manovre</span>L'ostruzione è dinamica, per cui un gradiente basso a riposo non la esclude. In circa un terzo dei pazienti è presente a riposo, in un altro terzo compare solo con la provocazione (Valsalva, ortostatismo, sforzo) e nel restante terzo manca. Si ripetono quindi in ecografia le manovre fatte al letto. Se il gradiente resta basso in un paziente con sintomi, si passa allo sforzo fisico, che è la condizione in cui i sintomi compaiono davvero.</p>
+  <p><span class="perche">Le soglie</span><b>≥ 30 mmHg</b> definisce l'ostruzione. Oltre <b>50 mmHg</b> l'ostruzione è emodinamicamente importante: è la soglia da cui di norma i sintomi dipendono dal gradiente. Se i sintomi persistono nonostante la terapia medica, è anche la soglia per considerare le terapie di riduzione del setto (miectomia, alcolizzazione) o gli inibitori della miosina cardiaca.</p>
+  <div class="nota"><p><b>Dalla semeiotica alla terapia.</b> La stessa fisiopatologia spiega la terapia. I betabloccanti e il verapamil rallentano la frequenza e allungano la diastole, cioè danno più riempimento e meno contrattilità. Gli inibitori della miosina riducono la contrattilità. Vasodilatatori, nitrati, diuretici in eccesso e disidratazione agiscono come una Valsalva prolungata e vanno evitati.</p></div>
+</section>
+
+<footer class="piede">
+  <p>Materiale didattico di sintesi: non sostituisce i testi di riferimento né le linee guida (ESC 2023 sulle cardiomiopatie; AHA/ACC 2024 sulla CMI).</p>
+  <p>Fonte delle accuratezze delle manovre: Lembo NJ et al. <i>Bedside diagnosis of systolic murmurs.</i> N Engl J Med 1988;318:1572-8.</p>
+</footer>
+
+</body>
+</html>
