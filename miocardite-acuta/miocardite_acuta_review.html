@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Miocardite acuta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rosso: #b0122d;
+    --rosso-scuro: #7c0c20;
+    --rosso-tenue: #fbecee;
+    --blu: #14325c;
+    --blu-tenue: #eaf0f8;
+    --oro: #c98a12;
+    --inchiostro: #1c1b1f;
+    --grigio: #5b5862;
+    --filetto: #d6d2d8;
+    --sabbia: #f6f3ee;
+  }
+  @page { size: A4; margin: 17mm 14mm 15mm 14mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; }
+  body {
+    color: var(--inchiostro);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 9.35pt;
+    line-height: 1.4;
+    hyphens: auto; -webkit-hyphens: auto;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .sans { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; }
+  p { margin: 0 0 0.5em; text-align: justify; }
+  p + p { text-indent: 1.1em; }
+  b, strong { font-weight: 700; }
+  sup { font-size: 0.68em; line-height: 0; }
+  sup.r { color: var(--rosso); font-family: "Inter", sans-serif; font-weight: 600; }
+
+  /* ---------- testata rivista ---------- */
+  .masthead {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-bottom: 2.5px solid var(--rosso); padding-bottom: 5px;
+    font-family: "Inter", sans-serif;
+  }
+  .testata-nome { font-weight: 800; font-size: 19pt; letter-spacing: -0.02em; color: var(--rosso); line-height: 1; }
+  .testata-nome span { color: var(--blu); font-weight: 600; }
+  .testata-info { font-size: 7.3pt; color: var(--grigio); text-align: right; line-height: 1.35; }
+  .rubrica {
+    display: inline-block; margin-top: 11px;
+    font-family: "Inter", sans-serif; font-weight: 700; font-size: 7.6pt;
+    letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--blu);
+    padding: 3px 8px 2px;
+  }
+  .rubrica + .rubrica { background: var(--rosso); margin-left: 4px; }
+  h1 {
+    font-family: "Inter", sans-serif; font-weight: 800;
+    font-size: 25pt; line-height: 1.06; letter-spacing: -0.025em;
+    margin: 8px 0 5px; color: var(--inchiostro);
+  }
+  .occhiello { font-size: 11.6pt; font-style: italic; color: var(--grigio); margin: 0 0 7px; line-height: 1.32; }
+  .autori { font-family: "Inter", sans-serif; font-size: 8pt; color: var(--grigio); margin-bottom: 10px; }
+  .autori b { color: var(--inchiostro); font-weight: 600; }
+
+  /* ---------- hero ---------- */
+  figure { margin: 0; break-inside: avoid; }
+  .hero { margin: 0 0 10px; }
+  .hero svg { display: block; width: 100%; height: auto; border-radius: 3px; }
+  figcaption {
+    font-family: "Inter", sans-serif; font-size: 7.2pt; line-height: 1.38; color: #3f3c45;
+    margin-top: 5px; text-align: left;
+  }
+  figcaption b.fig { color: var(--rosso); letter-spacing: 0.02em; }
+
+  /* ---------- abstract + punti chiave ---------- */
+  .apertura { display: grid; grid-template-columns: 1fr 58mm; gap: 6mm; margin-bottom: 9px; break-inside: avoid; }
+  .abstract { border-top: 1px solid var(--inchiostro); padding-top: 6px; font-size: 8.7pt; }
+  .abstract h2, .chiave h2 {
+    font-family: "Inter", sans-serif; font-size: 8pt; font-weight: 800; letter-spacing: 0.14em;
+    text-transform: uppercase; margin: 0 0 5px;
+  }
+  .abstract p { text-indent: 0; margin-bottom: 4px; }
+  .abstract .et { font-family: "Inter", sans-serif; font-weight: 700; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rosso); }
+  .chiave { background: var(--rosso-tenue); border-top: 3px solid var(--rosso); padding: 7px 10px 6px; font-size: 8.3pt; }
+  .chiave h2 { color: var(--rosso); }
+  .chiave p { text-indent: 0; text-align: left; margin-bottom: 5px; }
+  .chiave .q { font-family: "Inter", sans-serif; font-weight: 700; font-size: 7.5pt; color: var(--rosso-scuro); display: block; margin-bottom: 1px; }
+
+  /* ---------- colonne ---------- */
+  .colonne { column-count: 2; column-gap: 6.5mm; column-rule: 0.5px solid #e4e0e6; orphans: 3; widows: 3; }
+  .colonne > * { break-inside: auto; }
+  .colonne > figure, .colonne > .box, .colonne > .tab { break-inside: avoid; }
+  .span { column-span: all; margin: 4px 0 11px; }
+  h2.sez {
+    font-family: "Inter", sans-serif; font-weight: 800; font-size: 10.6pt; letter-spacing: -0.005em;
+    color: var(--rosso); margin: 10px 0 4px; break-after: avoid; text-transform: uppercase;
+  }
+  h3 {
+    font-family: "Inter", sans-serif; font-weight: 700; font-size: 8.9pt; color: var(--blu);
+    margin: 8px 0 2px; break-after: avoid;
+  }
+  h2.sez + p, h3 + p { text-indent: 0; }
+  .capolettera::first-letter {
+    font-family: "Inter", sans-serif; font-weight: 800; float: left; font-size: 30pt; line-height: 0.82;
+    padding: 3px 5px 0 0; color: var(--rosso);
+  }
+  ul.lista { margin: 2px 0 6px; padding-left: 1.05em; }
+  ul.lista li { margin-bottom: 2px; }
+  ul.lista li::marker { color: var(--rosso); }
+
+  /* ---------- riquadri ---------- */
+  .box { background: var(--blu-tenue); border-top: 2.5px solid var(--blu); padding: 7px 9px 5px; margin: 6px 0 9px; break-inside: avoid; font-size: 8.4pt; }
+  .box.rosso { background: var(--rosso-tenue); border-top-color: var(--rosso); }
+  .box.sabbia { background: var(--sabbia); border-top-color: var(--oro); }
+  .box h4 {
+    font-family: "Inter", sans-serif; font-weight: 800; font-size: 7.6pt; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--blu); margin: 0 0 4px;
+  }
+  .box.rosso h4 { color: var(--rosso); }
+  .box.sabbia h4 { color: #8a5d06; }
+  .box p { text-indent: 0; text-align: left; }
+  .box ul { margin: 0 0 3px; padding-left: 1.05em; }
+  .box li { margin-bottom: 2px; }
+
+  /* ---------- tabelle ---------- */
+  .tab { break-inside: avoid; margin: 6px 0 10px; }
+  .tab .titolo { font-family: "Inter", sans-serif; font-size: 7.6pt; font-weight: 700; margin-bottom: 3px; }
+  .tab .titolo b { color: var(--rosso); }
+  table { width: 100%; border-collapse: collapse; font-family: "Inter", sans-serif; font-size: 7pt; line-height: 1.3; }
+  thead th { text-align: left; font-weight: 700; border-top: 1.4px solid var(--inchiostro); border-bottom: 0.8px solid var(--inchiostro); padding: 3px 4px; background: #f1eef2; }
+  tbody td { padding: 3px 4px; vertical-align: top; border-bottom: 0.5px solid var(--filetto); }
+  tbody tr:last-child td { border-bottom: 1.4px solid var(--inchiostro); }
+  tbody td:first-child { font-weight: 600; color: var(--blu); }
+  .tab .nota { font-family: "Inter", sans-serif; font-size: 6.4pt; color: var(--grigio); margin-top: 3px; }
+  td .tag { display: inline-block; font-size: 6.1pt; font-weight: 700; padding: 0 4px; border-radius: 2px; color: #fff; background: var(--rosso); }
+  td .tag.b { background: var(--blu); }
+  td .tag.o { background: var(--oro); }
+
+  /* ---------- figure in colonna ---------- */
+  .figcol { margin: 6px 0 10px; }
+  .figcol svg, .span svg { display: block; width: 100%; height: auto; }
+  .cornice { border: 0.6px solid var(--filetto); border-radius: 3px; overflow: hidden; }
+
+  /* ---------- bibliografia ---------- */
+  .biblio { font-family: "Inter", sans-serif; font-size: 6.6pt; line-height: 1.35; color: #34313a; padding-left: 1.6em; margin: 2px 0 0; }
+  .biblio li { margin-bottom: 2.5px; text-align: left; }
+  .biblio li::marker { color: var(--rosso); font-weight: 700; }
+  .info-art { font-family: "Inter", sans-serif; font-size: 6.6pt; color: var(--grigio); border-top: 0.6px solid var(--filetto); padding-top: 5px; margin-top: 8px; }
+  .info-art p { text-align: left; text-indent: 0; margin-bottom: 3px; }
+
+  .pagebreak { break-before: page; }
+</style>
+</head>
+<body>
+
+<!-- ======================= TESTATA ======================= -->
+<header class="masthead">
+  <div class="testata-nome">Vademecum <span>Cardiologia</span></div>
+  <div class="testata-info">Volume 2026–27 · Ottobre 2026<br>Rassegna clinica · Miocardio e pericardio</div>
+</header>
+<span class="rubrica">Clinical Review</span><span class="rubrica">Educazione medica</span>
+<h1>Miocardite acuta: dalla fisiopatologia al letto del paziente, all'imaging e alla terapia</h1>
+<p class="occhiello">Una sindrome dai mille volti, dal dolore toracico con troponina elevata nel giovane fino allo shock cardiogeno: come riconoscerla, stratificarne il rischio e trattarla secondo le evidenze attuali.</p>
+<div class="autori"><b>Redazione Vademecum 2026–27</b> · Rassegna didattica basata sulle linee guida ESC 2025 su miocarditi e pericarditi e sui principali documenti di consenso internazionali</div>
+
+<!-- ======================= HERO ======================= -->
+<figure class="hero">
+<svg id="hero" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <linearGradient id="hBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1430"/><stop offset="0.55" stop-color="#1c0f2e"/><stop offset="1" stop-color="#3a0b1d"/>
+    </linearGradient>
+    <radialGradient id="hGlow" cx="0.3" cy="0.5" r="0.45">
+      <stop offset="0" stop-color="#ff3b5c" stop-opacity="0.35"/><stop offset="1" stop-color="#ff3b5c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cuore" cx="0.42" cy="0.38" r="0.7">
+      <stop offset="0" stop-color="#ef5a63"/><stop offset="0.45" stop-color="#c3202f"/><stop offset="0.85" stop-color="#7d0b1c"/><stop offset="1" stop-color="#4b0612"/>
+    </radialGradient>
+    <linearGradient id="aorta" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9a1325"/><stop offset="0.5" stop-color="#d23a46"/><stop offset="1" stop-color="#8a0f20"/>
+    </linearGradient>
+    <linearGradient id="polm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3c3f9e"/><stop offset="0.5" stop-color="#6f74d6"/><stop offset="1" stop-color="#34378c"/>
+    </linearGradient>
+    <linearGradient id="vcava" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22357a"/><stop offset="0.5" stop-color="#4a64c4"/><stop offset="1" stop-color="#1f2f6c"/>
+    </linearGradient>
+    <radialGradient id="flogosi" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffe08a" stop-opacity="0.95"/><stop offset="0.35" stop-color="#ff9a3c" stop-opacity="0.7"/><stop offset="1" stop-color="#ff5a2a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lente" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+    <filter id="bagliore" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="morbido"><feGaussianBlur stdDeviation="1.2"/></filter>
+    <clipPath id="clipLente"><circle cx="680" cy="200" r="153"/></clipPath>
+    <pattern id="striaeIF" width="7" height="10" patternUnits="userSpaceOnUse"><rect width="2.2" height="10" fill="#ffffff" opacity="0.18"/></pattern>
+    <symbol id="virione" viewBox="-12 -12 24 24">
+      <g stroke="#ffd34d" stroke-width="1.4" stroke-linecap="round">
+        <line x1="0" y1="-11" x2="0" y2="-7"/><line x1="0" y1="11" x2="0" y2="7"/><line x1="-11" y1="0" x2="-7" y2="0"/><line x1="11" y1="0" x2="7" y2="0"/>
+        <line x1="-7.8" y1="-7.8" x2="-5" y2="-5"/><line x1="7.8" y1="7.8" x2="5" y2="5"/><line x1="-7.8" y1="7.8" x2="-5" y2="5"/><line x1="7.8" y1="-7.8" x2="5" y2="-5"/>
+      </g>
+      <circle r="6.2" fill="#ffb81f" stroke="#fff3c2" stroke-width="1"/><circle r="2.4" fill="#fff3c2" opacity="0.8"/>
+    </symbol>
+  </defs>
+  <rect width="1000" height="400" fill="url(#hBg)"/>
+  <rect width="1000" height="400" fill="url(#hGlow)"/>
+  <!-- trama di punti -->
+  <g id="stelle" opacity="0.5"></g>
+
+  <!-- cuore stilizzato -->
+  <g transform="translate(40,18)">
+    <path d="M196 92 C 196 40 214 18 238 18 L 262 18 C 270 18 272 26 270 34 L 262 96 Z" fill="url(#vcava)"/>
+    <path d="M240 112 C 236 60 250 30 300 22 C 350 14 392 30 404 64 C 410 82 398 94 384 90 C 372 60 344 54 322 62 C 298 72 294 96 296 120 Z" fill="url(#aorta)"/>
+    <path d="M332 46 L 334 14 M 352 42 L 360 10 M 372 50 L 386 22" stroke="#a51829" stroke-width="13" stroke-linecap="round"/>
+    <path d="M290 128 C 300 96 330 82 362 92 C 392 102 410 110 430 100 L 440 122 C 418 136 392 132 372 126 C 346 118 326 128 316 150 Z" fill="url(#polm)"/>
+    <path d="M200 120 C 150 130 120 180 128 242 C 136 304 186 346 248 372 C 282 386 304 394 318 398 C 330 370 372 330 414 290 C 462 244 478 186 452 142 C 428 102 378 98 338 114 C 300 98 248 104 200 120 Z" fill="url(#cuore)"/>
+    <path d="M150 170 C 140 140 170 116 210 118 C 196 132 178 150 168 178 Z" fill="#3b4aa8" opacity="0.55"/>
+    <!-- coronarie -->
+    <path d="M318 128 C 300 170 292 210 300 258 C 306 300 310 340 318 392" stroke="#ffd9a0" stroke-width="3.2" fill="none" opacity="0.85"/>
+    <path d="M300 190 C 330 196 362 214 384 246" stroke="#ffd9a0" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M296 240 C 330 254 360 282 372 318" stroke="#ffd9a0" stroke-width="1.6" fill="none" opacity="0.6"/>
+    <path d="M330 120 C 380 120 426 140 444 176" stroke="#ffd9a0" stroke-width="2.2" fill="none" opacity="0.6"/>
+    <path d="M206 132 C 170 170 160 230 182 290" stroke="#ffd9a0" stroke-width="2.2" fill="none" opacity="0.55"/>
+    <!-- riflessi -->
+    <ellipse cx="230" cy="190" rx="44" ry="70" fill="#fff" opacity="0.1" transform="rotate(-22 230 190)"/>
+    <ellipse cx="222" cy="168" rx="12" ry="28" fill="#fff" opacity="0.18" transform="rotate(-22 222 168)"/>
+    <!-- focolai infiammatori -->
+    <circle cx="392" cy="232" r="46" fill="url(#flogosi)"/>
+    <circle cx="350" cy="300" r="30" fill="url(#flogosi)" opacity="0.8"/>
+    <circle cx="250" cy="250" r="22" fill="url(#flogosi)" opacity="0.6"/>
+    <circle cx="392" cy="232" r="34" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="4 3"/>
+  </g>
+  <!-- linee della lente -->
+  <line x1="452" y1="222" x2="560" y2="104" stroke="#fff" stroke-width="1" opacity="0.6"/>
+  <line x1="452" y1="278" x2="560" y2="298" stroke="#fff" stroke-width="1" opacity="0.6"/>
+  <!-- lente con tessuto -->
+  <circle cx="680" cy="200" r="155" fill="#06070d"/>
+  <g id="tessutoIF" clip-path="url(#clipLente)"></g>
+  <circle cx="680" cy="200" r="153" fill="url(#lente)"/>
+  <circle cx="680" cy="200" r="155" fill="none" stroke="#e8eaf6" stroke-width="3"/>
+  <circle cx="680" cy="200" r="161" fill="none" stroke="#e8eaf6" stroke-width="0.8" opacity="0.5"/>
+  <!-- etichette -->
+  <g font-size="11" fill="#e9ecf7">
+    <text x="862" y="78" font-weight="700" fill="#7dffb2">● Linfociti T CD3⁺</text>
+    <text x="862" y="98" font-weight="700" fill="#ffc94a">● Virioni</text>
+    <text x="862" y="118" font-weight="700" fill="#ff8597">● Cardiomiociti</text>
+    <text x="862" y="138" font-weight="700" fill="#8fb0ff">● Nuclei</text>
+    <text x="862" y="158" font-weight="700" fill="#d7a8ff">● Macrofagi CD68⁺</text>
+  </g>
+  <g font-size="10.5" fill="#c9cde0">
+    <text x="28" y="384">Focolaio infiammatorio subepicardico infero-laterale</text>
+    <text x="862" y="352" text-anchor="start">Immunofluorescenza</text>
+    <text x="862" y="366" text-anchor="start">(rappresentazione)</text>
+  </g>
+</svg>
+<figcaption><b class="fig">Figura 1.</b> Rappresentazione artistica della miocardite acuta. A sinistra, cuore con focolai infiammatori a distribuzione subepicardica nella parete infero-laterale, la sede più tipica nella miocardite virale. A destra, ingrandimento “in immunofluorescenza”: cardiomiociti striati (rosso) con nuclei (blu), infiltrato di linfociti T CD3⁺ (verde) e macrofagi (viola) nell'interstizio, virioni (giallo) e miociti necrotici adiacenti all'infiltrato — il substrato istologico dei criteri di Dallas.</figcaption>
+</figure>
+
+<!-- ======================= ABSTRACT ======================= -->
+<section class="apertura">
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p><span class="et">Importanza</span> La miocardite acuta è una malattia infiammatoria del miocardio con un'incidenza stimata di 10–22 casi/100 000 persone-anno, picco nei maschi giovani e presentazioni che vanno dal dolore toracico con troponina elevata allo shock cardiogeno. È una causa rilevante di morte improvvisa sotto i 40 anni e di cardiomiopatia dilatativa.</p>
+    <p><span class="et">Osservazioni</span> Il danno nasce dall'interazione tra un agente scatenante (virus, farmaci come gli inibitori dei checkpoint immunitari, vaccini a mRNA, tossici, malattie autoimmuni) e la risposta immunitaria dell'ospite, secondo un modello trifasico. La diagnosi integra clinica, ECG, troponina ad alta sensibilità, ecocardiografia e risonanza magnetica cardiaca (criteri di Lake Louise 2018); la biopsia endomiocardica resta il riferimento nelle forme complicate. Circa tre quarti dei pazienti hanno una forma non complicata con prognosi eccellente, mentre le forme fulminanti richiedono un centro con supporto meccanico al circolo e terapia immunosoppressiva guidata dall'istotipo.</p>
+    <p><span class="et">Conclusioni e rilevanza</span> Un percorso strutturato — escludere la sindrome coronarica, stratificare il rischio, confermare con la RM, biopsiare quando serve, trattare lo scompenso e le aritmie, sospendere lo sport — consente di ridurre mortalità ed esiti a lungo termine.</p>
+  </div>
+  <aside class="chiave">
+    <h2>Punti chiave</h2>
+    <p><span class="q">Sospettala quando</span>dolore toracico, dispnea o palpitazioni seguono di 1–2 settimane una sindrome simil-influenzale, con troponina elevata e coronarie indenni.</p>
+    <p><span class="q">Conferma</span>RM cardiaca: ≥1 criterio T2 (edema) + ≥1 criterio T1 (LGE non ischemico, T1/ECV).</p>
+    <p><span class="q">Red flag</span>shock, TV sostenuta, BAV avanzato, FEVS &lt;50% che non migliora: centro Hub e biopsia urgente.</p>
+    <p><span class="q">Terapia</span>supporto, terapia dello scompenso, stop sport ≥3–6 mesi; immunosoppressione solo per istotipi specifici.</p>
+  </aside>
+</section>
+
+<!-- ======================= CORPO A DUE COLONNE ======================= -->
+<main class="colonne">
+
+<h2 class="sez">Introduzione</h2>
+<p class="capolettera">La miocardite è definita come una malattia infiammatoria del miocardio diagnosticata con criteri istologici, immunologici e immunoistochimici consolidati.<sup class="r">1,2</sup> Nella pratica clinica la diagnosi è sempre più spesso posta in modo non invasivo, grazie alla risonanza magnetica cardiaca (RMC), e le linee guida della Società Europea di Cardiologia (ESC) del 2025 hanno riunito miocardite e pericardite sotto un quadro unitario di <i>sindromi infiammatorie mio-pericardiche</i>, riconoscendo il continuum tra le due condizioni.<sup class="r">1</sup></p>
+<p>L'epidemiologia è sottostimata, perché molte forme decorrono in modo subclinico. Il picco d'incidenza riguarda i maschi tra 20 e 40 anni, con un rapporto maschi:femmine di circa 2:1, verosimilmente legato all'effetto immunomodulante degli ormoni sessuali.<sup class="r">4,5</sup> Le serie autoptiche attribuiscono alla miocardite una quota non trascurabile delle morti improvvise nei giovani e negli atleti, mentre nel lungo termine una frazione dei pazienti evolve verso la <b>cardiomiopatia infiammatoria</b> e la cardiomiopatia dilatativa.<sup class="r">5,7</sup></p>
+
+<h2 class="sez">Eziologia</h2>
+<p>Nei Paesi occidentali la causa più frequente è virale. Il panorama si è spostato dagli enterovirus (Coxsackie B) e adenovirus, cardiotropi in senso stretto, ai virus vasculotropi e linfotropi come il <b>parvovirus B19</b> e l'<b>herpesvirus umano 6</b>, la cui presenza nel miocardio è però frequente anche nei controlli e va interpretata con cautela.<sup class="r">2,5</sup> SARS-CoV-2 e influenza agiscono soprattutto attraverso la risposta infiammatoria sistemica. Le cause non infettive comprendono le forme immuno-mediate da farmaci — in particolare gli <b>inibitori dei checkpoint immunitari</b> (ICI)<sup class="r">12</sup> — la miocardite dopo vaccino a mRNA,<sup class="r">13</sup> le reazioni di ipersensibilità, le malattie autoimmuni sistemiche e tre istotipi peculiari: miocardite a <b>cellule giganti</b>, <b>eosinofila</b> e <b>sarcoidosi cardiaca</b> (Tabella 1).</p>
+
+<div class="tab">
+  <div class="titolo"><b>Tabella 1.</b> Principali cause di miocardite acuta</div>
+  <table>
+    <thead><tr><th style="width:27%">Categoria</th><th>Agenti / condizioni</th><th style="width:30%">Indizi clinici</th></tr></thead>
+    <tbody>
+      <tr><td>Virale</td><td>Parvovirus B19, HHV-6, enterovirus (Coxsackie B), adenovirus, SARS-CoV-2, influenza, EBV, CMV, HIV</td><td>Prodromi respiratori o gastrointestinali 1–2 settimane prima</td></tr>
+      <tr><td>Altri infettivi</td><td><i>Borrelia</i>, <i>Trypanosoma cruzi</i>, difterite, <i>Mycoplasma</i>, rickettsie</td><td>BAV (Lyme), viaggi, area endemica</td></tr>
+      <tr><td>Farmaci immunomodulanti</td><td>Inibitori dei checkpoint (anti-PD-1, anti-PD-L1, anti-CTLA-4), CAR-T</td><td>Esordio precoce (mediana ~1 mese); miosite e miastenia associate</td></tr>
+      <tr><td>Vaccini</td><td>Vaccini a mRNA anti-SARS-CoV-2</td><td>Maschi giovani, 2–4 giorni dopo la 2ª dose; decorso per lo più benigno</td></tr>
+      <tr><td>Ipersensibilità / tossici</td><td>Clozapina, sulfamidici, β-lattamici, cocaina, antracicline, alcol</td><td>Eosinofilia, rash, esposizione recente</td></tr>
+      <tr><td>Autoimmune / sistemica</td><td>LES, sclerosi sistemica, EGPA, sarcoidosi, malattia infiammatoria intestinale</td><td>Coinvolgimento multiorgano, autoanticorpi</td></tr>
+      <tr><td>Istotipi specifici</td><td>Cellule giganti, eosinofila, granulomatosa (sarcoidosi)</td><td>TV, BAV, scompenso rapidamente progressivo</td></tr>
+    </tbody>
+  </table>
+  <div class="nota">BAV, blocco atrioventricolare; EGPA, granulomatosi eosinofila con poliangioite; HHV-6, herpesvirus umano 6; LES, lupus eritematoso sistemico; TV, tachicardia ventricolare.</div>
+</div>
+
+<h2 class="sez">Fisiopatologia</h2>
+<p>Il modello sperimentale murino di miocardite da Coxsackievirus B3, confermato dagli studi istologici nell'uomo, descrive tre fasi che si sovrappongono nel tempo (Figura 2).<sup class="r">5,11</sup></p>
+
+<h3>Fase 1 — danno virale diretto (giorni 0–7)</h3>
+<p>Il virus raggiunge il miocardio per via ematogena e penetra nei cardiomiociti legandosi a recettori specifici: il <b>recettore Coxsackie-adenovirus</b> (CAR), una proteina delle giunzioni intercalari, con il co-recettore <i>decay-accelerating factor</i> (DAF/CD55). Una volta nel citoplasma, la replicazione virale causa lisi cellulare; la <b>proteasi virale 2A</b> cliva la distrofina, disgregando il legame tra citoscheletro e sarcolemma — un meccanismo che ricorda le cardiomiopatie genetiche da difetti della distrofina. Il rilascio di componenti intracellulari e di RNA virale attiva l'immunità innata tramite i recettori <i>Toll-like</i> (TLR3, TLR4, TLR7) e l'inflammasoma NLRP3, con produzione di interferoni di tipo I, protettivi perché limitano la replicazione virale.</p>
+
+<h3>Fase 2 — risposta immunitaria adattativa (settimane 1–4)</h3>
+<p>Macrofagi, cellule <i>natural killer</i> e cellule dendritiche presentano antigeni virali e cardiaci ai linfociti T. L'infiltrato di <b>linfociti T CD4⁺ e CD8⁺</b> elimina i miociti infetti, ma una risposta eccessiva o mal regolata danneggia anche i cardiomiociti non infetti. Il <b>mimetismo molecolare</b> tra epitopi virali e proteine cardiache (in particolare la catena pesante dell'α-miosina) e lo smascheramento di antigeni normalmente sequestrati innescano l'autoimmunità, con comparsa di autoanticorpi anti-miosina, anti-recettore β1-adrenergico e anti-troponina. Le citochine IL-1β, IL-6, TNF-α e IL-17 deprimono la contrattilità, aumentano la permeabilità capillare (da cui l'<b>edema</b> visibile in RMC) e promuovono il rimodellamento.</p>
+<p>Questa fase spiega perché la clinica compaia tipicamente dopo un intervallo libero dai prodromi e perché la disfunzione ventricolare possa essere marcata anche con poca necrosi: il cuore è “stordito” dall'infiammazione, e una funzione gravemente depressa nelle forme fulminanti può recuperare completamente.</p>
+
+<h3>Fase 3 — guarigione o cronicizzazione (mesi)</h3>
+<p>Nella maggior parte dei pazienti l'eliminazione del virus si accompagna allo spegnimento dell'infiammazione e alla guarigione, talvolta con cicatrici focali che restano visibili come <i>late gadolinium enhancement</i> (LGE). In una minoranza persistono genoma virale, infiltrato o autoimmunità: la matrice extracellulare si rimodella per l'azione delle metalloproteinasi e del TGF-β, la fibrosi si estende e il ventricolo si dilata, configurando la <b>cardiomiopatia infiammatoria</b> e, a distanza, la cardiomiopatia dilatativa.<sup class="r">5,7</sup> La fibrosi interstiziale e le cicatrici sono anche il substrato dei circuiti di rientro alla base delle aritmie ventricolari tardive.</p>
+
+<div class="box">
+  <h4>Correlazioni fisiopatologia → clinica</h4>
+  <ul>
+    <li><b>Edema e citochine</b> → disfunzione sistolica reversibile, pareti ispessite all'eco, iperintensità T2 in RM.</li>
+    <li><b>Necrosi dei miociti</b> → rilascio di troponina, LGE subepicardico.</li>
+    <li><b>Infiammazione dell'epicardio e del pericardio</b> → dolore pleuritico, sopraslivellamento ST diffuso, sfregamento.</li>
+    <li><b>Infiltrato del sistema di conduzione</b> → BAV, sospetto di cellule giganti o sarcoidosi.</li>
+    <li><b>Fibrosi residua</b> → aritmie ventricolari tardive, rischio di morte improvvisa.</li>
+  </ul>
+</div>
+
+<!-- ======== FIGURA 2: PATOGENESI (spazio pieno) ======== -->
+<figure class="span">
+<svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <linearGradient id="miocita" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6a3ae"/><stop offset="1" stop-color="#d9566a"/></linearGradient>
+    <linearGradient id="miocitaPallido" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4d4d8"/><stop offset="1" stop-color="#d7a5ad"/></linearGradient>
+    <linearGradient id="fibrosi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9fb4cf"/><stop offset="1" stop-color="#cdd9e8"/></linearGradient>
+    <radialGradient id="linfoT" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#8ef0b6"/><stop offset="1" stop-color="#1c9c58"/></radialGradient>
+    <radialGradient id="macro" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#d8b6ff"/><stop offset="1" stop-color="#7b3fc4"/></radialGradient>
+    <pattern id="striae" width="8" height="10" patternUnits="userSpaceOnUse"><rect width="2.4" height="10" fill="#9e2235" opacity="0.28"/></pattern>
+    <symbol id="vir2" viewBox="-12 -12 24 24">
+      <g stroke="#c98a12" stroke-width="1.5" stroke-linecap="round"><line x1="0" y1="-11" x2="0" y2="-7"/><line x1="0" y1="11" x2="0" y2="7"/><line x1="-11" y1="0" x2="-7" y2="0"/><line x1="11" y1="0" x2="7" y2="0"/><line x1="-7.8" y1="-7.8" x2="-5" y2="-5"/><line x1="7.8" y1="7.8" x2="5" y2="5"/><line x1="-7.8" y1="7.8" x2="-5" y2="5"/><line x1="7.8" y1="-7.8" x2="5" y2="-5"/></g>
+      <circle r="6.2" fill="#f5b81f" stroke="#8a5d06" stroke-width="0.8"/>
+    </symbol>
+    <symbol id="cellT" viewBox="-14 -14 28 28"><circle r="12.5" fill="url(#linfoT)" stroke="#0f6b3a" stroke-width="1"/><circle r="7.5" cx="1" cy="1" fill="#0f5f35" opacity="0.75"/></symbol>
+    <symbol id="cellM" viewBox="-20 -16 40 32"><path d="M-17 -2 C -18 -12 -6 -15 2 -13 C 12 -12 19 -6 17 3 C 15 12 5 15 -4 13 C -13 12 -16 6 -17 -2 Z" fill="url(#macro)" stroke="#4e1f86" stroke-width="1"/><ellipse cx="-2" cy="0" rx="7" ry="5" fill="#4e1f86" opacity="0.7"/></symbol>
+    <marker id="freccia" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b5862"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#fbfaf8"/>
+  <!-- intestazioni di fase -->
+  <g font-weight="800" font-size="13" fill="#fff">
+    <path d="M10 10 H 330 L 345 32 L 330 54 H 10 Z" fill="#c98a12"/>
+    <path d="M338 10 H 660 L 675 32 L 660 54 H 338 L 353 32 Z" fill="#b0122d"/>
+    <path d="M668 10 H 990 V 54 H 668 L 683 32 Z" fill="#14325c"/>
+    <text x="24" y="29">FASE 1 · DANNO VIRALE DIRETTO</text><text x="24" y="46" font-weight="500" font-size="11">Giorni 0–7</text>
+    <text x="368" y="29">FASE 2 · RISPOSTA IMMUNITARIA</text><text x="368" y="46" font-weight="500" font-size="11">Settimane 1–4</text>
+    <text x="698" y="29">FASE 3 · GUARIGIONE O CRONICITÀ</text><text x="698" y="46" font-weight="500" font-size="11">Mesi–anni</text>
+  </g>
+
+  <!-- ===== Pannello 1 ===== -->
+  <g transform="translate(18,70)">
+    <rect x="0" y="40" width="300" height="110" rx="55" fill="url(#miocita)" stroke="#9e2235" stroke-width="1.3"/>
+    <rect x="0" y="40" width="300" height="110" rx="55" fill="url(#striae)"/>
+    <ellipse cx="150" cy="95" rx="30" ry="17" fill="#6c5bd4" stroke="#3e2f9a"/>
+    <!-- recettori CAR -->
+    <g stroke="#14325c" stroke-width="2.5" stroke-linecap="round">
+      <path d="M70 40 v-10 m-5 -3 l5 3 l5 -3"/><path d="M110 40 v-10 m-5 -3 l5 3 l5 -3"/><path d="M190 40 v-10 m-5 -3 l5 3 l5 -3"/><path d="M230 40 v-10 m-5 -3 l5 3 l5 -3"/>
+    </g>
+    <use href="#vir2" x="58" y="-4" width="24" height="24"/>
+    <use href="#vir2" x="178" y="-6" width="24" height="24"/>
+    <use href="#vir2" x="250" y="2" width="20" height="20"/>
+    <use href="#vir2" x="20" y="8" width="18" height="18"/>
+    <!-- virus intracellulari -->
+    <use href="#vir2" x="90" y="78" width="16" height="16"/><use href="#vir2" x="205" y="104" width="16" height="16"/><use href="#vir2" x="230" y="72" width="14" height="14"/>
+    <!-- distrofina clivata -->
+    <path d="M40 140 Q 70 132 100 140" stroke="#14325c" stroke-width="3" fill="none"/>
+    <path d="M112 140 Q 140 132 166 140" stroke="#14325c" stroke-width="3" fill="none" stroke-dasharray="7 5"/>
+    <text x="108" y="146" font-size="15" fill="#b0122d" font-weight="800">✂</text>
+    <g font-size="10.2" fill="#1c1b1f">
+      <text x="0" y="176" font-weight="700" fill="#14325c">Ingresso via CAR/DAF</text>
+      <text x="0" y="190">replicazione e lisi dei miociti</text>
+      <text x="0" y="208" font-weight="700" fill="#14325c">Proteasi 2A → clivaggio distrofina</text>
+      <text x="0" y="226" font-weight="700" fill="#14325c">TLR3/4/7 · NLRP3 → IFN di tipo I</text>
+      <text x="0" y="240">immunità innata, controllo virale</text>
+    </g>
+  </g>
+
+  <!-- ===== Pannello 2 ===== -->
+  <g transform="translate(352,70)">
+    <rect x="0" y="40" width="140" height="100" rx="50" fill="url(#miocita)" stroke="#9e2235" stroke-width="1.3"/>
+    <rect x="0" y="40" width="140" height="100" rx="50" fill="url(#striae)"/>
+    <ellipse cx="70" cy="90" rx="22" ry="13" fill="#6c5bd4" stroke="#3e2f9a"/>
+    <rect x="160" y="40" width="140" height="100" rx="50" fill="url(#miocitaPallido)" stroke="#b3707b" stroke-width="1.3" stroke-dasharray="5 3"/>
+    <ellipse cx="230" cy="90" rx="18" ry="10" fill="#a99fd8" opacity="0.7"/>
+    <g opacity="0.85"><circle cx="196" cy="62" r="4" fill="#b0122d"/><circle cx="262" cy="118" r="3" fill="#b0122d"/><circle cx="246" cy="60" r="3.5" fill="#b0122d"/></g>
+    <use href="#cellT" x="130" y="10" width="34" height="34"/><use href="#cellT" x="150" y="128" width="34" height="34"/>
+    <use href="#cellT" x="270" y="16" width="30" height="30"/><use href="#cellT" x="104" y="134" width="28" height="28"/>
+    <use href="#cellM" x="10" y="140" width="46" height="36"/><use href="#cellM" x="236" y="132" width="46" height="36"/>
+    <!-- citochine -->
+    <g fill="#c98a12"><circle cx="118" cy="30" r="3"/><circle cx="198" cy="20" r="3"/><circle cx="214" cy="30" r="2.4"/><circle cx="90" cy="24" r="2.4"/><circle cx="300" cy="94" r="3"/><circle cx="148" cy="178" r="2.6"/></g>
+    <text x="196" y="94" font-size="9.5" fill="#7c0c20" font-weight="700" text-anchor="middle">necrosi</text>
+    <g font-size="10.2" fill="#1c1b1f">
+      <text x="0" y="198" font-weight="700" fill="#b0122d">Linfociti T CD4⁺/CD8⁺, NK, macrofagi</text>
+      <text x="0" y="212">citotossicità su miociti infetti e non infetti</text>
+      <text x="0" y="230" font-weight="700" fill="#b0122d">Mimetismo molecolare (α-miosina)</text>
+      <text x="0" y="244">autoanticorpi anti-miosina, anti-β1</text>
+      <text x="0" y="262" font-weight="700" fill="#b0122d">IL-1β · IL-6 · TNF-α · IL-17</text>
+    </g>
+  </g>
+
+  <!-- ===== Pannello 3 ===== -->
+  <g transform="translate(686,64)">
+    <!-- recupero -->
+    <g transform="translate(0,6)">
+      <path d="M40 26 C 22 30 10 52 14 76 C 18 100 40 118 66 128 C 82 108 104 92 112 70 C 120 46 108 22 84 20 C 70 18 56 22 40 26 Z" fill="#d23a46" stroke="#7c0c20"/>
+      <ellipse cx="62" cy="76" rx="14" ry="24" fill="#7c0c20" opacity="0.65"/>
+      <text x="130" y="48" font-size="11.5" font-weight="800" fill="#1c9c58">Risoluzione</text>
+      <text x="130" y="63" font-size="10" fill="#1c1b1f">clearance virale, spegnimento</text>
+      <text x="130" y="76" font-size="10" fill="#1c1b1f">dell'infiammazione; possibili</text>
+      <text x="130" y="89" font-size="10" fill="#1c1b1f">cicatrici focali (LGE residuo)</text>
+    </g>
+    <!-- CMD -->
+    <g transform="translate(0,140)">
+      <path d="M36 18 C 6 24 -4 62 6 96 C 16 126 50 140 76 146 C 92 124 122 104 132 76 C 142 44 124 14 92 12 C 72 10 54 14 36 18 Z" fill="#c55462" stroke="#7c0c20"/>
+      <ellipse cx="66" cy="80" rx="38" ry="46" fill="#5d0918" opacity="0.75"/>
+      <g stroke="url(#fibrosi)" stroke-width="3" opacity="0.95"><path d="M24 60 l12 8 M 110 52 l-10 10 M 98 118 l-8 -10 M 36 112 l10 -6"/></g>
+      <text x="146" y="58" font-size="11.5" font-weight="800" fill="#14325c">Cronicizzazione</text>
+      <text x="146" y="73" font-size="10" fill="#1c1b1f">persistenza virale/autoimmunità,</text>
+      <text x="146" y="86" font-size="10" fill="#1c1b1f">MMP e TGF-β → fibrosi,</text>
+      <text x="146" y="99" font-size="10" fill="#1c1b1f">dilatazione: cardiomiopatia</text>
+      <text x="146" y="112" font-size="10" fill="#1c1b1f">infiammatoria → CMD</text>
+    </g>
+    <path d="M-4 120 C 10 100 10 80 -2 70" stroke="#5b5862" stroke-width="1.5" fill="none" marker-end="url(#freccia)"/>
+    <path d="M-4 130 C 10 150 10 180 -2 194" stroke="#5b5862" stroke-width="1.5" fill="none" marker-end="url(#freccia)"/>
+  </g>
+
+  <!-- ===== Curve temporali ===== -->
+  <g transform="translate(10,348)">
+    <rect x="0" y="0" width="980" height="82" fill="#fff" stroke="#e1dde3"/>
+    <line x1="40" y1="70" x2="960" y2="70" stroke="#5b5862" stroke-width="1.2" marker-end="url(#freccia)"/>
+    <text x="10" y="40" font-size="9" fill="#5b5862" transform="rotate(-90 14 40)" text-anchor="middle">intensità</text>
+    <path d="M40 68 C 90 66 110 8 160 10 C 220 12 250 60 330 66 L 960 67" stroke="#c98a12" stroke-width="3" fill="none"/>
+    <path d="M40 68 C 140 66 200 40 280 18 C 360 4 440 14 520 50 C 600 64 700 64 960 64" stroke="#b0122d" stroke-width="3" fill="none"/>
+    <path d="M40 69 C 300 68 420 64 520 54 C 640 42 760 32 960 28" stroke="#14325c" stroke-width="3" fill="none" stroke-dasharray="8 5"/>
+    <g font-size="10" font-weight="700">
+      <text x="52" y="28" fill="#c98a12">replicazione virale</text>
+      <text x="336" y="44" fill="#b0122d" font-size="9.5">infiammazione / autoimmunità</text>
+      <text x="780" y="22" fill="#14325c">fibrosi e rimodellamento (se cronicizza)</text>
+    </g>
+    <g font-size="9" fill="#5b5862"><text x="44" y="80">0</text><text x="320" y="80">2 sett.</text><text x="620" y="80">3 mesi</text><text x="900" y="80">anni</text></g>
+  </g>
+</svg>
+<figcaption><b class="fig">Figura 2.</b> Modello trifasico della miocardite virale. <b>Fase 1</b>: il virus entra nei cardiomiociti tramite il recettore Coxsackie-adenovirus (CAR) e il co-recettore DAF, si replica e cliva la distrofina tramite la proteasi 2A; i recettori Toll-like attivano l'immunità innata. <b>Fase 2</b>: linfociti T, cellule NK e macrofagi eliminano i miociti infetti ma danneggiano anche quelli sani; il mimetismo molecolare innesca l'autoimmunità e le citochine deprimono la contrattilità. <b>Fase 3</b>: guarigione nella maggior parte dei casi, oppure persistenza dell'infiammazione con fibrosi e cardiomiopatia dilatativa. In basso, l'andamento temporale indicativo dei tre processi.</figcaption>
+</figure>
+
+<h2 class="sez">Presentazione clinica e semeiotica</h2>
+<p>La miocardite è un “grande imitatore”: la presentazione dipende dall'estensione e dalla sede dell'infiammazione più che dall'agente causale. Nel Registro lombardo di 443 pazienti con miocardite acuta il 97% aveva meno di 50 anni; nel 74% la forma era <b>non complicata</b> (FEVS conservata, nessuna aritmia ventricolare maggiore né instabilità emodinamica) e a 5 anni nessuno di questi pazienti era morto o aveva ricevuto un trapianto, contro il 14,7% dei pazienti con forma complicata.<sup class="r">9</sup></p>
+
+<figure class="figcol">
+<svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef3fa"/><stop offset="1" stop-color="#f8fbff"/></linearGradient>
+    <linearGradient id="mare" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d5d93"/><stop offset="1" stop-color="#0c1f3d"/></linearGradient>
+    <linearGradient id="ghiaccio" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bfd5ec"/></linearGradient>
+    <linearGradient id="ghiaccioSotto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8db6dd" stop-opacity="0.85"/><stop offset="1" stop-color="#4c7fb3" stop-opacity="0.55"/></linearGradient>
+  </defs>
+  <rect width="500" height="160" fill="url(#cielo)"/>
+  <rect y="160" width="500" height="260" fill="url(#mare)"/>
+  <path d="M0 160 Q 30 154 60 160 T 120 160 T 180 160 T 240 160 T 300 160 T 360 160 T 420 160 T 480 160 T 540 160" stroke="#bcd6f2" stroke-width="2" fill="none"/>
+  <!-- parte emersa -->
+  <path d="M150 160 L 190 92 L 214 104 L 250 22 L 284 86 L 304 74 L 346 160 Z" fill="url(#ghiaccio)" stroke="#7fa3c9" stroke-width="1.4"/>
+  <path d="M250 22 L 240 80 L 214 104 M 284 86 L 270 120" stroke="#9cbbd9" stroke-width="1" fill="none"/>
+  <!-- parte sommersa -->
+  <path d="M150 160 L 346 160 L 420 230 L 446 318 L 390 396 L 250 410 L 110 392 L 58 300 L 90 214 Z" fill="url(#ghiaccioSotto)" stroke="#a7c7e8" stroke-width="1.2"/>
+  <!-- livelli -->
+  <g font-size="11.5" font-weight="700">
+    <line x1="246" y1="46" x2="360" y2="30" stroke="#b0122d"/><text x="364" y="27" fill="#b0122d">Fulminante</text>
+    <text x="364" y="40" font-size="9.5" font-weight="500" fill="#4a4752">shock cardiogeno, MCS</text>
+    <line x1="270" y1="90" x2="360" y2="74" stroke="#b0122d"/><text x="364" y="72" fill="#b0122d">Aritmica</text>
+    <text x="364" y="85" font-size="9.5" font-weight="500" fill="#4a4752">TV/FV, BAV, sincope</text>
+    <line x1="300" y1="128" x2="360" y2="118" stroke="#14325c"/><text x="364" y="116" fill="#14325c">Scompenso</text>
+    <text x="364" y="129" font-size="9.5" font-weight="500" fill="#4a4752">FEVS ridotta, dispnea</text>
+    <line x1="200" y1="128" x2="130" y2="96" stroke="#14325c"/><text x="12" y="80" fill="#14325c">Pseudo-infartuale</text>
+    <text x="12" y="93" font-size="9.5" font-weight="500" fill="#4a4752">dolore, ST↑, troponina↑</text>
+    <text x="12" y="106" font-size="9.5" font-weight="500" fill="#4a4752">coronarie indenni</text>
+  </g>
+  <g font-size="13" font-weight="800" fill="#fff" text-anchor="middle">
+    <text x="250" y="232">Forme subcliniche</text>
+    <text x="250" y="250">e paucisintomatiche</text>
+    <text x="250" y="276" font-size="10.5" font-weight="500" fill="#dbe8f7">sindrome simil-influenzale,</text>
+    <text x="250" y="291" font-size="10.5" font-weight="500" fill="#dbe8f7">lieve rialzo di troponina,</text>
+    <text x="250" y="306" font-size="10.5" font-weight="500" fill="#dbe8f7">alterazioni ECG transitorie</text>
+    <text x="250" y="352" font-size="10" font-weight="600" fill="#9ec3ea">la quota più ampia, spesso non diagnosticata</text>
+  </g>
+  <g font-size="9" fill="#5b5862" font-weight="700"><text x="490" y="155" text-anchor="end">soglia del riconoscimento clinico</text></g>
+</svg>
+<figcaption><b class="fig">Figura 3.</b> L'“iceberg” della miocardite. Le presentazioni riconosciute clinicamente sono la punta di uno spettro dominato da forme subcliniche. Verso l'apice aumentano gravità e rischio: l'apice dell'iceberg identifica i pazienti da indirizzare a un centro Hub.</figcaption>
+</figure>
+
+<h3>Anamnesi</h3>
+<p>Elementi chiave sono i <b>prodromi</b> nelle 1–2 settimane precedenti (febbre, mialgie, sintomi respiratori o gastroenterici), l'esposizione a farmaci (ICI, clozapina), vaccinazioni recenti, l'uso di sostanze (cocaina), la storia di malattie autoimmuni e la familiarità per cardiomiopatia o morte improvvisa, che può suggerire una predisposizione genetica (varianti di desmoplachina o titina) che si manifesta con episodi “simil-miocarditici” ricorrenti.</p>
+
+<h3>Sintomi</h3>
+<ul class="lista">
+  <li><b>Dolore toracico</b> (oltre l'80% delle forme non complicate): può essere costrittivo e indistinguibile da una sindrome coronarica, o pleuritico e posizionale quando coesiste pericardite.</li>
+  <li><b>Dispnea, astenia e ridotta tolleranza allo sforzo</b>, fino a ortopnea ed edemi nelle forme con disfunzione ventricolare.</li>
+  <li><b>Palpitazioni, presincope e sincope</b>, che orientano verso aritmie ventricolari o blocchi della conduzione e sono segnali d'allarme.</li>
+</ul>
+
+<h3>Esame obiettivo</h3>
+<p>Nelle forme lievi l'esame può essere del tutto negativo. Vanno ricercati con metodo:</p>
+<ul class="lista">
+  <li><b>Tachicardia sproporzionata</b> rispetto alla febbre: segno precoce e spesso trascurato.</li>
+  <li><b>Terzo tono (galoppo protodiastolico)</b> all'apice in decubito laterale sinistro, espressione di aumentata pressione di riempimento.</li>
+  <li><b>Soffio olosistolico</b> da insufficienza mitralica funzionale per dilatazione o disfunzione dei muscoli papillari.</li>
+  <li><b>Sfregamento pericardico</b> nella miopericardite, meglio udibile a paziente seduto e proteso in avanti, in espirio.</li>
+  <li><b>Toni parafonici</b>, turgore giugulare, polso paradosso se c'è versamento significativo.</li>
+  <li>Segni di <b>bassa portata</b> — ipotensione, estremità fredde, oliguria, alterazioni del sensorio — e di congestione (crepitii, epatomegalia): indicano una forma fulminante.</li>
+  <li>Segni extracardiaci: rash e linfoadenopatie (ipersensibilità, sarcoidosi), debolezza muscolare e ptosi (miosite e miastenia da ICI).</li>
+</ul>
+
+<div class="box rosso">
+  <h4>Red flag: quando la miocardite è complicata</h4>
+  <ul>
+    <li>Instabilità emodinamica, shock cardiogeno, necessità di inotropi</li>
+    <li>FEVS &lt;50% o calo rapido della funzione, specie con ventricolo non dilatato</li>
+    <li>TV sostenuta, FV, arresto cardiaco rianimato</li>
+    <li>BAV di II–III grado o blocco di branca di nuova insorgenza</li>
+    <li>Allungamento del QRS, eosinofilia periferica, contesto di ICI</li>
+    <li>Mancato miglioramento dopo 1–2 settimane di terapia ottimale</li>
+  </ul>
+</div>
+
+<h2 class="sez">Elettrocardiogramma e biomarcatori</h2>
+<p>L'ECG è alterato nella grande maggioranza dei casi, ma nessun pattern è specifico (Figura 4). Il <b>sopraslivellamento del tratto ST</b> a concavità superiore, diffuso o regionale, con <b>sottoslivellamento del PR</b>, suggerisce un coinvolgimento pericardico; un sopraslivellamento localizzato può invece mimare un infarto con ST sopraslivellato. Nella fase subacuta compaiono onde T negative. Hanno valore prognostico sfavorevole l'<b>allargamento del QRS</b> (&gt;120 ms), le onde Q patologiche, i <b>blocchi atrioventricolari avanzati</b> — che devono far sospettare cellule giganti, sarcoidosi o malattia di Lyme — e le aritmie ventricolari. I bassi voltaggi possono riflettere edema miocardico o versamento.</p>
+<p>La <b>troponina ad alta sensibilità</b> è elevata in quasi tutti i casi sintomatici e, a differenza dell'infarto, può mantenere un andamento a plateau per giorni. Il valore assoluto non è un buon predittore di esito, mentre lo è il suo andamento. NT-proBNP, proteina C reattiva, VES ed emocromo con formula (eosinofilia) completano il quadro; la creatinchinasi elevata in un paziente in terapia con ICI deve far pensare a una miosite associata. La sierologia virale non è raccomandata perché non correla con l'infezione miocardica.<sup class="r">1,2</sup></p>
+
+<!-- ======== FIGURA 4: ECG ======== -->
+<figure class="span">
+<svg id="ecg" viewBox="0 0 1000 372" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <pattern id="ecgPiccola" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0 H0 V8" fill="none" stroke="#f6c3cb" stroke-width="0.6"/></pattern>
+    <pattern id="ecgGrande" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="url(#ecgPiccola)"/><path d="M40 0 H0 V40" fill="none" stroke="#ec8f9f" stroke-width="1.1"/></pattern>
+  </defs>
+  <rect width="1000" height="372" fill="#fff"/>
+  <g id="ecgStrisce"></g>
+</svg>
+<figcaption><b class="fig">Figura 4.</b> Quadri ECG nella miocardite acuta (tracciati schematici, 25 mm/s, 10 mm/mV). <b>A</b>, miopericardite: sopraslivellamento ST a concavità superiore con sottoslivellamento del PR. <b>B</b>, fase subacuta: inversione delle onde T. <b>C</b>, blocco atrioventricolare completo con ritmo di scappamento a QRS largo: sospettare miocardite a cellule giganti, sarcoidosi o malattia di Lyme. <b>D</b>, tachicardia ventricolare non sostenuta, marcatore di forma complicata.</figcaption>
+</figure>
+
+<h2 class="sez">Diagnostica per immagini</h2>
+<h3>Ecocardiografia</h3>
+<p>È l'esame di primo livello, da eseguire subito in tutti i pazienti. Può essere normale nelle forme lievi; altrimenti mostra <b>anomalie della cinetica regionale</b> che non rispettano i territori coronarici, disfunzione sistolica globale, versamento pericardico e trombi endocavitari. Nella miocardite <b>fulminante</b> il quadro tipico è quello di un ventricolo sinistro <b>non dilatato, con pareti ispessite</b> per l'edema e grave riduzione della FEVS (Figura 5), mentre la dilatazione suggerisce una forma subacuta o cronica.<sup class="r">10,17</sup> Lo <i>strain</i> longitudinale globale è ridotto anche quando la FEVS è conservata e ne segue il recupero; il coinvolgimento del ventricolo destro è un predittore indipendente di prognosi sfavorevole.</p>
+
+<figure class="figcol">
+<svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <filter id="speckle" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.85  0 0 0 0 0.85  0 0 0 0 0.85  0 0 0 1.7 -0.55" result="m"/>
+      <feComposite in="m" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="sfuma"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="ventaglio"><path d="M250 30 L 30 300 A 320 320 0 0 0 470 300 Z"/></clipPath>
+    <radialGradient id="attenua" cx="0.5" cy="0.05" r="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/></radialGradient>
+  </defs>
+  <rect width="500" height="380" fill="#050505"/>
+  <g clip-path="url(#ventaglio)">
+    <rect width="500" height="380" fill="#3b3b3b"/>
+    <rect width="500" height="380" fill="#888" filter="url(#speckle)" opacity="0.9"/>
+    <!-- versamento pericardico -->
+    <path d="M250 52 C 190 70 140 150 120 230 C 108 280 116 330 140 360 L 380 360 C 396 320 400 270 388 220 C 366 140 312 66 250 52 Z" fill="none" stroke="#020202" stroke-width="18" filter="url(#sfuma)"/>
+    <path d="M250 38 C 182 56 126 146 104 232 C 92 284 100 334 124 366 M 396 366 C 414 320 418 268 404 216 C 380 132 320 52 250 38" fill="none" stroke="#e8e8e8" stroke-width="5" opacity="0.8" filter="url(#sfuma)"/>
+    <!-- cavità -->
+    <g fill="#060606" filter="url(#sfuma)">
+      <path d="M298 118 C 278 140 272 190 276 236 C 280 252 320 254 336 240 C 344 196 336 150 316 120 C 310 112 302 112 298 118 Z"/>
+      <path d="M220 120 C 196 150 168 200 168 240 C 186 252 226 252 240 240 C 244 200 236 150 226 122 Z"/>
+      <path d="M278 270 C 272 300 284 336 308 340 C 340 342 352 312 344 280 C 336 262 290 262 278 270 Z"/>
+      <path d="M172 272 C 164 302 176 332 200 336 C 228 338 240 310 236 280 C 230 262 184 262 172 272 Z"/>
+    </g>
+    <rect width="500" height="380" fill="url(#attenua)"/>
+  </g>
+  <path d="M250 30 L 30 300 A 320 320 0 0 0 470 300 Z" fill="none" stroke="#4a4a4a" stroke-width="1"/>
+  <!-- etichette -->
+  <g font-size="11" font-weight="700" fill="#ffd34d">
+    <text x="326" y="186">VS</text><text x="190" y="196">VD</text><text x="304" y="310">AS</text><text x="196" y="306">AD</text>
+  </g>
+  <g font-size="10" fill="#f1f1f1">
+    <line x1="346" y1="150" x2="404" y2="120" stroke="#9fd0ff"/><text x="406" y="112" fill="#9fd0ff" font-weight="700">pareti ispessite</text><text x="406" y="125" fill="#9fd0ff">(edema)</text>
+    <line x1="318" y1="200" x2="404" y2="176" stroke="#c9ffb8"/><text x="406" y="172" fill="#c9ffb8" font-weight="700">cavità piccola</text><text x="406" y="185" fill="#c9ffb8">(VS non dilatato)</text>
+    <line x1="392" y1="240" x2="404" y2="240" stroke="#ff9aa8"/><text x="406" y="236" fill="#ff9aa8" font-weight="700">versamento</text><text x="406" y="249" fill="#ff9aa8">pericardico</text>
+  </g>
+  <text x="14" y="22" font-size="11" fill="#cfcfcf" font-weight="700">Apicale 4 camere</text>
+  <text x="14" y="36" font-size="9.5" fill="#9a9a9a">FEVS ~20% · VTD non aumentato</text>
+  <text x="486" y="372" font-size="9" fill="#777" text-anchor="end">illustrazione schematica</text>
+</svg>
+<figcaption><b class="fig">Figura 5.</b> Ecocardiogramma apicale 4 camere (schema) in una miocardite fulminante: ventricolo sinistro di dimensioni normali o ridotte con pareti ispessite per l'edema, grave ipocinesia globale e versamento pericardico. AD, atrio destro; AS, atrio sinistro; VD, ventricolo destro; VS, ventricolo sinistro.</figcaption>
+</figure>
+
+<h3>Esclusione della malattia coronarica</h3>
+<p>Poiché la miocardite si presenta spesso come una sindrome coronarica acuta, la <b>coronarografia</b> — oppure l'<b>angio-TC coronarica</b> nei pazienti stabili a rischio basso-intermedio — è necessaria per escludere un infarto, compreso il MINOCA da cause diverse dalla miocardite (dissezione coronarica spontanea, vasospasmo, embolia). La TC può essere estesa con acquisizioni tardive per valutare l'<i>enhancement</i> tardivo iodato.</p>
+
+<h3>Risonanza magnetica cardiaca</h3>
+<p>La RMC è l'esame non invasivo di riferimento, da eseguire idealmente <b>entro 1–2 settimane</b> dall'esordio, quando edema e iperemia sono ancora visibili. I <b>criteri di Lake Louise aggiornati nel 2018</b> richiedono la combinazione di un criterio basato sul T2 (edema) e di uno basato sul T1 (danno miocardico): la presenza di entrambi ha una specificità elevata, mentre un solo criterio “supporta” la diagnosi in un contesto clinico compatibile (Figura 6).<sup class="r">3</sup></p>
+
+<div class="box">
+  <h4>Criteri di Lake Louise 2018</h4>
+  <p><b>Criterio T2</b> (edema) — almeno uno tra: T2 regionale elevato (iperintensità nelle immagini T2 pesate, STIR) o T2 <i>mapping</i> globale/regionale aumentato.</p>
+  <p><b>Criterio T1</b> (danno non ischemico) — almeno uno tra: T1 nativo aumentato, volume extracellulare (ECV) aumentato, o LGE a distribuzione non ischemica (subepicardico o intramurale).</p>
+  <p><b>Criteri di supporto</b>: versamento o LGE pericardico; disfunzione sistolica del VS.</p>
+</div>
+
+<p>Il pattern tipico di LGE è <b>subepicardico o intramurale</b>, risparmia il subendocardio e coinvolge soprattutto la <b>parete infero-laterale basale</b>; il coinvolgimento <b>intramurale del setto</b> si associa a una prognosi peggiore.<sup class="r">8,14</sup> Al contrario, l'infarto produce un LGE che parte sempre dal subendocardio e segue un territorio coronarico. La RMC di controllo a circa 6 mesi distingue l'edema risolto dalla cicatrice persistente: l'LGE senza edema residuo identifica i pazienti a maggior rischio di eventi.<sup class="r">8</sup></p>
+
+<!-- ======== FIGURA 6: RM ======== -->
+<figure class="span">
+<svg id="rm" viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <filter id="rumoreRM" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 -0.35"/>
+    </filter>
+    <filter id="sfumaRM"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <filter id="sfumaRM2"><feGaussianBlur stdDeviation="4"/></filter>
+    <radialGradient id="torace" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4c4c4c"/><stop offset="0.8" stop-color="#2c2c2c"/><stop offset="1" stop-color="#151515"/></radialGradient>
+  </defs>
+  <rect width="1000" height="330" fill="#fff"/>
+  <g id="pannelliRM"></g>
+</svg>
+<figcaption><b class="fig">Figura 6.</b> Risonanza magnetica cardiaca, asse corto medio-ventricolare (rappresentazioni schematiche). <b>A</b>, immagine T2 pesata STIR: iperintensità (edema) nella parete infero-laterale. <b>B</b>, LGE subepicardico infero-laterale, il pattern più tipico della miocardite. <b>C</b>, LGE intramurale settale (“stria” mesocardica), associato a prognosi peggiore. <b>D</b>, confronto: LGE subendocardico in territorio coronarico (infarto inferiore). <b>E</b>, mappa polare a 17 segmenti con distribuzione dell'LGE nel caso B. VD, ventricolo destro.</figcaption>
+</figure>
+
+<h3>Altre metodiche</h3>
+<p>La <b>PET con <sup>18</sup>F-FDG</b>, preceduta da un'adeguata soppressione del metabolismo glucidico miocardico, è utile nel sospetto di sarcoidosi cardiaca e nel monitoraggio della risposta alla terapia; la PET-RM combinata è in fase di valutazione. La radiografia del torace evidenzia congestione e cardiomegalia nelle forme avanzate.</p>
+
+<h3>Biopsia endomiocardica</h3>
+<p>La biopsia endomiocardica (BEM) resta il riferimento diagnostico e l'unico strumento in grado di definire l'<b>istotipo</b> (linfocitario, a cellule giganti, eosinofilo, granulomatoso) e la presenza di genoma virale, informazioni indispensabili per decidere una terapia immunosoppressiva. È indicata nelle forme fulminanti o complicate, nello scompenso con ventricolo non dilatato che non risponde alla terapia entro 1–2 settimane, nelle aritmie ventricolari maggiori o nel BAV avanzato e nel sospetto di istotipi specifici.<sup class="r">1,4,10</sup> Vanno prelevati almeno 4–6 frammenti, preferibilmente guidati dall'imaging (biventricolari quando possibile), esaminati con istologia, immunoistochimica e PCR per il genoma virale. In centri esperti le complicanze maggiori sono inferiori all'1%.</p>
+
+<figure class="figcol">
+<svg id="isto" viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <clipPath id="clipIsto"><circle cx="250" cy="170" r="150"/></clipPath>
+    <radialGradient id="vignetta" cx="0.5" cy="0.5" r="0.5"><stop offset="0.75" stop-color="#3a1030" stop-opacity="0"/><stop offset="1" stop-color="#3a1030" stop-opacity="0.45"/></radialGradient>
+    <pattern id="striaeHE" width="6" height="10" patternUnits="userSpaceOnUse"><rect width="1.6" height="10" fill="#8c1f4f" opacity="0.18"/></pattern>
+    <filter id="granaHE" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.15  0 0 0 0 0.45  0 0 0 0.6 -0.18"/>
+    </filter>
+  </defs>
+  <rect width="500" height="360" fill="#fff"/>
+  <circle cx="250" cy="170" r="152" fill="#f3d9e6"/>
+  <g id="tessutoHE" clip-path="url(#clipIsto)"></g>
+  <g clip-path="url(#clipIsto)"><rect width="500" height="360" filter="url(#granaHE)"/></g>
+  <circle cx="250" cy="170" r="150" fill="url(#vignetta)"/>
+  <circle cx="250" cy="170" r="151" fill="none" stroke="#2b2230" stroke-width="2"/>
+  <g font-size="10.5" font-weight="700">
+    <line x1="300" y1="190" x2="420" y2="300" stroke="#1c1b1f"/><text x="350" y="316" fill="#1c1b1f">infiltrato linfocitario</text>
+    <line x1="210" y1="172" x2="70" y2="312" stroke="#1c1b1f"/><text x="12" y="326" fill="#1c1b1f">miocita necrotico</text>
+  </g>
+  <text x="250" y="352" font-size="9.5" fill="#5b5862" text-anchor="middle">Ematossilina-eosina, ×200 (rappresentazione)</text>
+</svg>
+<figcaption><b class="fig">Figura 7.</b> Criteri di Dallas: infiltrato infiammatorio associato a necrosi o degenerazione dei miociti adiacenti, non tipica del danno ischemico. I criteri immunoistochimici richiedono ≥14 leucociti/mm², con fino a 4 monociti/mm² e ≥7 linfociti T CD3⁺/mm².<sup class="r">2,6</sup></figcaption>
+</figure>
+
+<div class="tab">
+  <div class="titolo"><b>Tabella 2.</b> Contributo delle singole indagini</div>
+  <table>
+    <thead><tr><th style="width:24%">Esame</th><th>Cosa cercare</th><th style="width:28%">Limiti</th></tr></thead>
+    <tbody>
+      <tr><td>ECG</td><td>ST↑ concavo, PR↓, T negative, QRS largo, BAV, TV</td><td>Aspecifico; può essere normale</td></tr>
+      <tr><td>hs-troponina</td><td>Elevazione, andamento a plateau</td><td>Non distingue dall'infarto</td></tr>
+      <tr><td>Ecocardiogramma</td><td>Cinesi segmentaria, FEVS, spessori, VD, versamento, strain</td><td>Normale nelle forme lievi</td></tr>
+      <tr><td>Coronarografia / angio-TC</td><td>Esclusione di coronaropatia</td><td>Non dimostra la miocardite</td></tr>
+      <tr><td>RM cardiaca</td><td>Edema T2, LGE non ischemico, T1/ECV</td><td>Meno sensibile dopo 2–3 settimane; non definisce l'istotipo</td></tr>
+      <tr><td>PET-FDG</td><td>Infiammazione attiva (sarcoidosi)</td><td>Preparazione dietetica; disponibilità</td></tr>
+      <tr><td>Biopsia endomiocardica</td><td>Istotipo, immunoistochimica, PCR virale</td><td>Invasiva; errore di campionamento</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="sez">Diagnosi e stratificazione del rischio</h2>
+<p>Le linee guida distinguono una miocardite <b>confermata</b> — istologicamente o con RMC positiva per entrambi i criteri di Lake Louise in un contesto compatibile — da una miocardite <b>probabile</b>, basata su criteri clinici e su imaging incompleto.<sup class="r">1</sup> Il primo bivio clinico è la presenza di instabilità emodinamica o elettrica, che separa i pazienti gestibili nel centro di riferimento territoriale da quelli che devono essere trasferiti rapidamente in un centro Hub dotato di supporto meccanico al circolo, biopsia e trapianto (Figura 8).</p>
+<p>La <b>miocardite fulminante</b> si definisce come esordio acuto (&lt;1 mese) con necessità di inotropi o di supporto meccanico. Paradossalmente ha una prognosi a breve termine peggiore ma, nei sopravvissuti, un recupero funzionale spesso completo: a 60 giorni la mortalità cardiaca o il trapianto raggiungono il 28% rispetto all'1,8% delle forme non fulminanti con disfunzione ventricolare.<sup class="r">17</sup> Tra gli istotipi, la miocardite a cellule giganti ha la prognosi peggiore senza immunosoppressione.<sup class="r">16</sup></p>
+
+<!-- ======== FIGURA 8: ALGORITMO ======== -->
+<figure class="span">
+<svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <defs>
+    <marker id="fr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3f3c45"/></marker>
+    <marker id="frR" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b0122d"/></marker>
+    <filter id="ombra" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.16"/></filter>
+    <linearGradient id="gradR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3243c"/><stop offset="1" stop-color="#8f0e24"/></linearGradient>
+    <linearGradient id="gradB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22508c"/><stop offset="1" stop-color="#14325c"/></linearGradient>
+  </defs>
+  <rect width="1000" height="540" fill="#fbfaf8"/>
+  <g font-size="11.5" fill="#1c1b1f">
+    <!-- 1 -->
+    <g filter="url(#ombra)"><rect x="250" y="14" width="500" height="58" rx="8" fill="#fff" stroke="#3f3c45" stroke-width="1.2"/></g>
+    <text x="500" y="36" text-anchor="middle" font-weight="800" font-size="12.5">Sospetto clinico di miocardite acuta</text>
+    <text x="500" y="55" text-anchor="middle">dolore toracico, dispnea, palpitazioni, sincope ± prodromi · ECG · hs-troponina ↑</text>
+    <line x1="500" y1="72" x2="500" y2="94" stroke="#3f3c45" stroke-width="1.5" marker-end="url(#fr)"/>
+    <!-- 2 -->
+    <g filter="url(#ombra)"><rect x="250" y="96" width="500" height="58" rx="8" fill="#fff" stroke="#3f3c45" stroke-width="1.2"/></g>
+    <text x="500" y="118" text-anchor="middle" font-weight="800" font-size="12.5">Ecocardiogramma + esclusione della coronaropatia</text>
+    <text x="500" y="137" text-anchor="middle">coronarografia o angio-TC coronarica · NT-proBNP, PCR, emocromo, CK</text>
+    <line x1="500" y1="154" x2="500" y2="174" stroke="#3f3c45" stroke-width="1.5" marker-end="url(#fr)"/>
+    <!-- rombo -->
+    <g filter="url(#ombra)"><path d="M500 176 L 640 218 L 500 260 L 360 218 Z" fill="#fff4dc" stroke="#c98a12" stroke-width="1.6"/></g>
+    <text x="500" y="214" text-anchor="middle" font-weight="800">Instabilità emodinamica</text>
+    <text x="500" y="230" text-anchor="middle" font-weight="800">o elettrica?</text>
+    <!-- rami -->
+    <path d="M360 218 H 230 V 284" stroke="#b0122d" stroke-width="2" fill="none" marker-end="url(#frR)"/>
+    <text x="300" y="210" text-anchor="middle" font-weight="800" fill="#b0122d">SÌ</text>
+    <path d="M640 218 H 770 V 284" stroke="#14325c" stroke-width="2" fill="none" marker-end="url(#fr)"/>
+    <text x="700" y="210" text-anchor="middle" font-weight="800" fill="#14325c">NO</text>
+
+    <!-- ramo rosso -->
+    <g filter="url(#ombra)"><rect x="40" y="286" width="380" height="64" rx="8" fill="url(#gradR)"/></g>
+    <text x="230" y="309" text-anchor="middle" font-weight="800" fill="#fff" font-size="12.5">Forma fulminante / complicata</text>
+    <text x="230" y="327" text-anchor="middle" fill="#ffe3e7">trasferimento in centro Hub · Heart Team</text>
+    <text x="230" y="342" text-anchor="middle" fill="#ffe3e7">inotropi, VA-ECMO, Impella (ECPELLA) come ponte</text>
+    <line x1="230" y1="350" x2="230" y2="370" stroke="#b0122d" stroke-width="1.6" marker-end="url(#frR)"/>
+    <g filter="url(#ombra)"><rect x="40" y="372" width="380" height="58" rx="8" fill="#fff" stroke="#b0122d" stroke-width="1.4"/></g>
+    <text x="230" y="394" text-anchor="middle" font-weight="800">Biopsia endomiocardica urgente</text>
+    <text x="230" y="412" text-anchor="middle">istologia + immunoistochimica + PCR virale</text>
+    <line x1="230" y1="430" x2="230" y2="450" stroke="#b0122d" stroke-width="1.6" marker-end="url(#frR)"/>
+    <g filter="url(#ombra)"><rect x="40" y="452" width="380" height="74" rx="8" fill="#fff" stroke="#b0122d" stroke-width="1.4"/></g>
+    <text x="230" y="473" text-anchor="middle" font-weight="800">Terapia guidata dall'istotipo</text>
+    <text x="230" y="491" text-anchor="middle">cellule giganti, eosinofila, sarcoidosi, ICI → immunosoppressione</text>
+    <text x="230" y="507" text-anchor="middle">virus-positiva → no immunosoppressione</text>
+    <text x="230" y="521" text-anchor="middle" font-size="10" fill="#5b5862">ponte a recupero, LVAD o trapianto</text>
+
+    <!-- ramo blu -->
+    <g filter="url(#ombra)"><rect x="580" y="286" width="380" height="64" rx="8" fill="url(#gradB)"/></g>
+    <text x="770" y="309" text-anchor="middle" font-weight="800" fill="#fff" font-size="12.5">RM cardiaca entro 1–2 settimane</text>
+    <text x="770" y="327" text-anchor="middle" fill="#dce7f6">criteri di Lake Louise 2018</text>
+    <text x="770" y="342" text-anchor="middle" fill="#dce7f6">monitoraggio ECG 24–48 h</text>
+    <line x1="770" y1="350" x2="770" y2="370" stroke="#14325c" stroke-width="1.6" marker-end="url(#fr)"/>
+    <g filter="url(#ombra)"><rect x="580" y="372" width="380" height="58" rx="8" fill="#fff" stroke="#14325c" stroke-width="1.4"/></g>
+    <text x="770" y="394" text-anchor="middle" font-weight="800">Miocardite non complicata</text>
+    <text x="770" y="412" text-anchor="middle">stop sport · terapia SC se FEVS↓ · colchicina se pericardite</text>
+    <line x1="770" y1="430" x2="770" y2="450" stroke="#14325c" stroke-width="1.6" marker-end="url(#fr)"/>
+    <g filter="url(#ombra)"><rect x="580" y="452" width="380" height="74" rx="8" fill="#fff" stroke="#14325c" stroke-width="1.4"/></g>
+    <text x="770" y="473" text-anchor="middle" font-weight="800">Follow-up strutturato</text>
+    <text x="770" y="491" text-anchor="middle">ECG, Holter, ecocardiogramma, troponina</text>
+    <text x="770" y="507" text-anchor="middle">RM a ~6 mesi prima del ritorno allo sport</text>
+    <text x="770" y="521" text-anchor="middle" font-size="10" fill="#5b5862">rivalutazione a 3, 6 e 12 mesi</text>
+
+    <!-- red flag tratteggiato -->
+    <path d="M580 400 C 520 400 480 400 424 400" stroke="#b0122d" stroke-width="1.6" stroke-dasharray="6 4" fill="none" marker-end="url(#frR)"/>
+    <rect x="452" y="358" width="96" height="34" rx="5" fill="#fbecee" stroke="#b0122d" stroke-width="0.8"/>
+    <text x="500" y="372" text-anchor="middle" font-size="9.5" font-weight="800" fill="#b0122d">red flag</text>
+    <text x="500" y="385" text-anchor="middle" font-size="8.6" fill="#7c0c20">FEVS↓ persistente, BAV, TV</text>
+  </g>
+</svg>
+<figcaption><b class="fig">Figura 8.</b> Algoritmo diagnostico-terapeutico nella miocardite acuta. La comparsa di red flag in un paziente inizialmente stabile (freccia tratteggiata) impone il percorso del ramo rosso. ICI, inibitori dei checkpoint immunitari; LVAD, dispositivo di assistenza ventricolare sinistra; SC, scompenso cardiaco; VA-ECMO, ossigenazione extracorporea veno-arteriosa.</figcaption>
+</figure>
+
+<h2 class="sez">Terapia</h2>
+<h3>Misure generali</h3>
+<p>Tutti i pazienti con miocardite acuta vanno ricoverati e monitorati con telemetria nelle prime 24–48 ore, perché le aritmie possono comparire anche in forme apparentemente benigne. Va evitato l'esercizio fisico intenso: nel modello animale l'attività fisica durante la fase acuta aumenta replicazione virale e mortalità. Gli atleti devono astenersi dallo sport agonistico per <b>3–6 mesi</b>, con ritorno subordinato a normalizzazione di biomarcatori e funzione ventricolare e all'assenza di aritmie a Holter e test da sforzo; per i non atleti le linee guida più recenti propongono un percorso individualizzato.<sup class="r">1,15</sup> Vanno evitati alcol e, nelle forme con disfunzione ventricolare, i FANS, che peggiorano la ritenzione idrosalina e, nei modelli sperimentali, l'infiammazione miocardica.</p>
+
+<h3>Scompenso cardiaco e shock</h3>
+<p>Nei pazienti stabili con FEVS ridotta si imposta la terapia raccomandata per lo scompenso a frazione d'eiezione ridotta — ACE-inibitori o sacubitril/valsartan, β-bloccanti, antagonisti dei mineralcorticoidi e inibitori di SGLT2 — da proseguire per almeno 6–12 mesi dopo il recupero della funzione, poi da rivalutare. Nello <b>shock cardiogeno</b> si utilizzano inotropi e vasopressori come ponte, ma l'escalation verso il <b>supporto meccanico al circolo</b> (VA-ECMO, Impella o la loro combinazione) dovrebbe essere precoce, prima dell'insorgenza di danno d'organo: il miocardio infiammato ha un'elevata probabilità di recupero, e il supporto è spesso un ponte alla guarigione.<sup class="r">4,10</sup></p>
+
+<h3>Aritmie</h3>
+<p>Le aritmie ventricolari della fase acuta si trattano con β-bloccanti e amiodarone; il BAV avanzato richiede la stimolazione temporanea. Poiché l'infiammazione è potenzialmente reversibile, l'impianto di un <b>defibrillatore</b> in prevenzione primaria va differito fino alla risoluzione della fase acuta (in genere 3–6 mesi), valutando nel frattempo un defibrillatore indossabile. Fanno eccezione le aritmie ventricolari maggiori in istotipi ad alto rischio, come cellule giganti e sarcoidosi.<sup class="r">1</sup></p>
+
+<h3>Terapia immunosoppressiva e antivirale</h3>
+<p>Non vi sono evidenze di beneficio dell'immunosoppressione nella miocardite linfocitaria virale acuta non complicata, e la persistenza di genoma virale replicante ne costituisce una controindicazione relativa. L'immunosoppressione è invece raccomandata, dopo la conferma bioptica, nelle forme con istotipo specifico e nella miocardite da ICI (Tabella 3). Nelle forme fulminanti linfocitarie, in attesa dell'esito della biopsia, molti centri impiegano boli di metilprednisolone dopo l'esclusione di un'infezione attiva.<sup class="r">4,10</sup> Le immunoglobuline endovenose non sono raccomandate di routine nell'adulto; l'interferone-β nelle infezioni persistenti da enterovirus e adenovirus resta una strategia sperimentale. Nella <b>miopericardite</b> la colchicina, eventualmente associata a FANS a basso dosaggio in assenza di disfunzione ventricolare, controlla la componente pericardica.</p>
+
+<div class="tab">
+  <div class="titolo"><b>Tabella 3.</b> Terapia nei principali scenari clinici</div>
+  <table>
+    <thead><tr><th style="width:26%">Scenario</th><th>Strategia</th></tr></thead>
+    <tbody>
+      <tr><td>Non complicata, FEVS conservata</td><td>Monitoraggio 24–48 h, riposo dallo sport, β-bloccante se tachicardia o extrasistolia; colchicina se pericardite <span class="tag b">supporto</span></td></tr>
+      <tr><td>FEVS ridotta, stabile</td><td>ACEi/ARNI, β-bloccante, MRA, SGLT2i; diuretici se congestione; BEM se nessun miglioramento in 1–2 settimane</td></tr>
+      <tr><td>Fulminante / shock</td><td>Centro Hub, inotropi, VA-ECMO ± Impella; BEM urgente; metilprednisolone e.v. dopo esclusione di infezione attiva <span class="tag">urgente</span></td></tr>
+      <tr><td>Cellule giganti</td><td>Corticosteroidi ad alte dosi + inibitore della calcineurina (ciclosporina o tacrolimus) ± globulina antitimocitaria; mantenimento prolungato <span class="tag">IS</span></td></tr>
+      <tr><td>Eosinofila</td><td>Sospendere il farmaco scatenante; corticosteroidi; terapia della causa (EGPA, sindrome ipereosinofila) <span class="tag">IS</span></td></tr>
+      <tr><td>Sarcoidosi cardiaca</td><td>Corticosteroidi + risparmiatore di steroide (metotrexato, anti-TNF); ICD se TV o FEVS ridotta; guida con PET <span class="tag">IS</span></td></tr>
+      <tr><td>Da ICI</td><td>Sospensione dell'ICI; metilprednisolone 500–1000 mg/die e.v. per 3–5 giorni, poi prednisone orale a scalare; refrattari: abatacept, ruxolitinib, micofenolato <span class="tag">IS</span></td></tr>
+      <tr><td>Post-vaccino mRNA</td><td>Terapia di supporto; decorso generalmente favorevole; follow-up come le forme non complicate <span class="tag o">benigna</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nota">ACEi, ACE-inibitori; ARNI, inibitore del recettore dell'angiotensina e della neprilisina; ICD, defibrillatore impiantabile; IS, immunosoppressione; MRA, antagonisti dei mineralcorticoidi; SGLT2i, inibitori del cotrasportatore sodio-glucosio di tipo 2.</div>
+</div>
+
+<h2 class="sez">Popolazioni particolari</h2>
+<p><b>Miocardite da ICI.</b> Rara (circa l'1% dei pazienti trattati) ma gravata da una mortalità che nelle prime serie superava il 40%, insorge di solito nei primi mesi di terapia, soprattutto con le combinazioni anti-PD-1 + anti-CTLA-4, e si associa spesso a miosite e miastenia (sindrome “3M”). La troponina può essere solo moderatamente elevata e la FEVS conservata: la sorveglianza con ECG e troponina nelle prime settimane è raccomandata nei pazienti ad alto rischio.<sup class="r">12</sup></p>
+<p><b>Miocardite dopo vaccino a mRNA.</b> Colpisce soprattutto maschi tra 12 e 29 anni, tipicamente nei giorni successivi alla seconda dose, con dolore toracico e troponina elevata; nella grande maggioranza dei casi il decorso è benigno e il rischio è inferiore a quello di miocardite associata all'infezione da SARS-CoV-2.<sup class="r">13</sup></p>
+<p><b>Atleti.</b> La miocardite è una causa riconosciuta di morte improvvisa sportiva. Ogni sindrome simil-influenzale con dolore toracico, palpitazioni o calo inspiegato della performance merita ECG e troponina prima della ripresa degli allenamenti.<sup class="r">15</sup></p>
+
+<h2 class="sez">Prognosi e follow-up</h2>
+<p>La prognosi dipende soprattutto dalla presentazione clinica e dall'istotipo. Predittori di esito sfavorevole sono la FEVS ridotta, la disfunzione del ventricolo destro, il QRS allargato, la classe NYHA elevata, l'LGE settale intramurale o esteso e la sua persistenza in assenza di edema alla RMC di controllo, l'istotipo a cellule giganti e la persistenza di genoma virale con infiammazione.<sup class="r">7–9,17</sup> Le recidive avvengono in circa il 10% dei casi; episodi ripetuti, specie con familiarità, devono indurre a considerare un test genetico. Un follow-up clinico, elettrocardiografico ed ecocardiografico a 3, 6 e 12 mesi, con RMC a circa 6 mesi, è ragionevole per tutti i pazienti, e almeno annuale in caso di disfunzione o cicatrice residua.</p>
+
+<div class="box sabbia">
+  <h4>Al letto del paziente: 5 messaggi</h4>
+  <ul>
+    <li>Un giovane con dolore toracico, ST sopraslivellato e coronarie normali ha una miocardite fino a prova contraria.</li>
+    <li>Tachicardia sproporzionata, terzo tono e ipotensione: pensa alla forma fulminante e chiama l'Hub.</li>
+    <li>La RMC precoce cambia la diagnosi; la biopsia cambia la terapia.</li>
+    <li>Un ventricolo piccolo, spesso e ipocinetico può tornare normale: il supporto meccanico va dato presto.</li>
+    <li>Stop allo sport per 3–6 mesi e follow-up con RMC prima di riprendere.</li>
+  </ul>
+</div>
+
+<h2 class="sez">Conclusioni</h2>
+<p>La miocardite acuta riassume molte delle sfide della cardiologia moderna: una fisiopatologia che intreccia virologia e immunologia, una semeiotica che richiede attenzione ai segni sottili, una diagnostica per immagini in cui la RMC ha cambiato il paradigma e una terapia che va dal semplice riposo al supporto meccanico e all'immunosoppressione mirata. Il riconoscimento precoce delle forme complicate e l'invio tempestivo a un centro esperto sono gli interventi a più alto impatto sulla sopravvivenza.</p>
+
+<h2 class="sez">Bibliografia</h2>
+<ol class="biblio">
+  <li>Schulz-Menger J, Collini V, Gröschel J, et al. 2025 ESC Guidelines for the management of myocarditis and pericarditis. <i>Eur Heart J</i>. 2025.</li>
+  <li>Caforio ALP, Pankuweit S, Arbustini E, et al. Current state of knowledge on aetiology, diagnosis, management, and therapy of myocarditis: a position statement of the ESC Working Group on Myocardial and Pericardial Diseases. <i>Eur Heart J</i>. 2013;34(33):2636-2648.</li>
+  <li>Ferreira VM, Schulz-Menger J, Holmvang G, et al. Cardiovascular magnetic resonance in nonischemic myocardial inflammation: expert recommendations. <i>J Am Coll Cardiol</i>. 2018;72(24):3158-3176.</li>
+  <li>Ammirati E, Frigerio M, Adler ED, et al. Management of acute myocarditis and chronic inflammatory cardiomyopathy: an expert consensus document. <i>Circ Heart Fail</i>. 2020;13(11):e007405.</li>
+  <li>Tschöpe C, Ammirati E, Bozkurt B, et al. Myocarditis and inflammatory cardiomyopathy: current evidence and future directions. <i>Nat Rev Cardiol</i>. 2021;18(3):169-193.</li>
+  <li>Aretz HT, Billingham ME, Edwards WD, et al. Myocarditis: a histopathologic definition and classification. <i>Am J Cardiovasc Pathol</i>. 1987;1(1):3-14.</li>
+  <li>Grün S, Schumm J, Greulich S, et al. Long-term follow-up of biopsy-proven viral myocarditis: predictors of mortality and incomplete recovery. <i>J Am Coll Cardiol</i>. 2012;59(18):1604-1615.</li>
+  <li>Aquaro GD, Perfetto F, Pontone G, et al. Late gadolinium enhancement in patients with acute myocarditis and preserved systolic function (ITAMY study). <i>J Am Coll Cardiol</i>. 2017;70(16):1977-1987.</li>
+  <li>Ammirati E, Cipriani M, Moro C, et al. Clinical presentation and outcome in a contemporary cohort of patients with acute myocarditis: Multicenter Lombardy Registry. <i>Circulation</i>. 2018;138(11):1088-1099.</li>
+  <li>Kociol RD, Cooper LT, Fang JC, et al. Recognition and initial management of fulminant myocarditis: a scientific statement from the American Heart Association. <i>Circulation</i>. 2020;141(6):e69-e92.</li>
+  <li>Cooper LT Jr. Myocarditis. <i>N Engl J Med</i>. 2009;360(15):1526-1538.</li>
+  <li>Mahmood SS, Fradley MG, Cohen JV, et al. Myocarditis in patients treated with immune checkpoint inhibitors. <i>J Am Coll Cardiol</i>. 2018;71(16):1755-1764.</li>
+  <li>Bozkurt B, Kamat I, Hotez PJ. Myocarditis with COVID-19 mRNA vaccines. <i>Circulation</i>. 2021;144(6):471-484.</li>
+  <li>Mahrholdt H, Wagner A, Deluigi CC, et al. Presentation, patterns of myocardial damage, and clinical course of viral myocarditis. <i>Circulation</i>. 2006;114(15):1581-1590.</li>
+  <li>Pelliccia A, Sharma S, Gati S, et al. 2020 ESC Guidelines on sports cardiology and exercise in patients with cardiovascular disease. <i>Eur Heart J</i>. 2021;42(1):17-96.</li>
+  <li>Cooper LT Jr, Berry GJ, Shabetai R. Idiopathic giant-cell myocarditis — natural history and treatment. <i>N Engl J Med</i>. 1997;336(26):1860-1866.</li>
+  <li>Ammirati E, Veronese G, Brambatti M, et al. Fulminant versus acute nonfulminant myocarditis in patients with left ventricular systolic dysfunction. <i>J Am Coll Cardiol</i>. 2019;74(3):299-311.</li>
+</ol>
+
+<div class="info-art">
+  <p><b>Nota sulle illustrazioni:</b> tutte le figure sono rappresentazioni schematiche e didattiche, non immagini di pazienti reali.</p>
+  <p><b>Uso didattico:</b> questa rassegna è uno strumento di studio e non sostituisce le linee guida originali né il giudizio clinico; i dosaggi vanno sempre verificati sulle fonti.</p>
+</div>
+
+</main>
+
+<script>
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+  /* ---------- puntini di sfondo nella hero ---------- */
+  (function () {
+    const g = document.getElementById('stelle'), r = rng(5);
+    for (let i = 0; i < 90; i++) el('circle', { cx: (r() * 1000).toFixed(1), cy: (r() * 400).toFixed(1), r: (r() * 1.1 + 0.2).toFixed(2), fill: '#cfd6ff', opacity: (r() * 0.6 + 0.1).toFixed(2) }, g);
+  })();
+
+  /* ---------- generatore di tessuto miocardico ---------- */
+  function tessuto(g, o) {
+    const r = rng(o.seed);
+    const root = el('g', { transform: `rotate(${o.rot} ${o.cx} ${o.cy})` }, g);
+    const x0 = o.cx - o.R - 60, x1 = o.cx + o.R + 60;
+    const focolai = o.foci;
+    function vicino(x, y) { let m = 1e9; for (const f of focolai) m = Math.min(m, Math.hypot(x - f[0], y - f[1]) / f[2]); return m; }
+    let y = o.cy - o.R - 50;
+    const cellule = [];
+    while (y < o.cy + o.R + 50) {
+      const h = o.h[0] + r() * (o.h[1] - o.h[0]);
+      let x = x0 - r() * 80;
+      while (x < x1) {
+        const w = o.w[0] + r() * (o.w[1] - o.w[0]);
+        const cx = x + w / 2, cy = y + h / 2, d = vicino(cx, cy);
+        const necrotico = d < 0.55 && r() < 0.55;
+        const gr = el('g', {}, root);
+        if (necrotico) {
+          const w1 = w * (0.35 + r() * 0.2);
+          el('rect', { x: x.toFixed(1), y: y.toFixed(1), width: w1.toFixed(1), height: h.toFixed(1), rx: (h / 2).toFixed(1), fill: o.colNec, opacity: 0.75 }, gr);
+          el('rect', { x: (x + w1 + 6).toFixed(1), y: (y + 2).toFixed(1), width: (w - w1 - 8).toFixed(1), height: (h - 4).toFixed(1), rx: ((h - 4) / 2).toFixed(1), fill: o.colNec, opacity: 0.55 }, gr);
+        } else {
+          el('rect', { x: x.toFixed(1), y: y.toFixed(1), width: w.toFixed(1), height: h.toFixed(1), rx: (h / 2).toFixed(1), fill: o.col[Math.floor(r() * o.col.length)], stroke: o.bordo, 'stroke-width': 0.8 }, gr);
+          el('rect', { x: x.toFixed(1), y: y.toFixed(1), width: w.toFixed(1), height: h.toFixed(1), rx: (h / 2).toFixed(1), fill: `url(#${o.striae})` }, gr);
+          el('ellipse', { cx: (cx + (r() - 0.5) * w * 0.3).toFixed(1), cy: (cy + (r() - 0.5) * 3).toFixed(1), rx: (7 + r() * 4).toFixed(1), ry: (3.6 + r() * 1.4).toFixed(1), fill: o.nucleo, opacity: 0.92 }, gr);
+        }
+        cellule.push([x, y, w, h]);
+        x += w + o.gap + r() * 3;
+      }
+      y += h + o.gapY + r() * 3;
+      // cellule infiammatorie negli spazi interstiziali
+      const n = 40;
+      for (let i = 0; i < n; i++) {
+        const xx = x0 + r() * (x1 - x0), yy = y - o.gapY / 2 - 1.5 + (r() - 0.5) * 6;
+        const d = vicino(xx, yy);
+        const p = Math.exp(-d * d * 1.2);
+        if (r() < p * 0.95) {
+          const macro = r() < o.pMacro;
+          const rr = macro ? 6 + r() * 2 : 3.6 + r() * 1.4;
+          const c = el('circle', { cx: xx.toFixed(1), cy: yy.toFixed(1), r: rr.toFixed(1), fill: macro ? o.colMacro : o.colLinfo }, root);
+          if (o.glow) c.setAttribute('filter', 'url(#bagliore)');
+        }
+      }
+    }
+    // virioni
+    if (o.virioni) for (let i = 0; i < o.virioni; i++) {
+      const f = focolai[Math.floor(r() * focolai.length)];
+      const a = r() * 6.28, d = r() * f[2] * 1.1;
+      const s = 10 + r() * 7;
+      el('use', { href: '#virione', x: (f[0] + Math.cos(a) * d - s / 2).toFixed(1), y: (f[1] + Math.sin(a) * d - s / 2).toFixed(1), width: s.toFixed(1), height: s.toFixed(1), filter: 'url(#bagliore)' }, root);
+    }
+  }
+
+  tessuto(document.getElementById('tessutoIF'), {
+    seed: 21, cx: 680, cy: 200, R: 160, rot: -14, h: [22, 30], w: [70, 130], gap: 5, gapY: 9,
+    col: ['#c8283f', '#d63a4f', '#b81f37', '#e04a5e'], bordo: '#ff8597', nucleo: '#5b86ff', striae: 'striaeIF',
+    colNec: '#5a1a28', colLinfo: '#45e08f', colMacro: '#b77bff', pMacro: 0.22, glow: true,
+    foci: [[650, 190, 95], [745, 270, 60]], virioni: 9
+  });
+  tessuto(document.getElementById('tessutoHE'), {
+    seed: 8, cx: 250, cy: 170, R: 150, rot: 8, h: [20, 28], w: [80, 150], gap: 7, gapY: 11,
+    col: ['#e595b4', '#ea9fbd', '#df88aa', '#ee aec6'.replace(' ', '')], bordo: '#c86c93', nucleo: '#5a3a9a', striae: 'striaeHE',
+    colNec: '#f1c6d6', colLinfo: '#3d1f78', colMacro: '#6b3fa0', pMacro: 0.12, glow: false,
+    foci: [[250, 180, 85], [320, 120, 45]], virioni: 0
+  });
+
+  /* ---------- ECG ---------- */
+  (function () {
+    const g = document.getElementById('ecgStrisce');
+    const G = (t, a, m, s) => a * Math.exp(-0.5 * ((t - m) / s) ** 2);
+    const W = (t, a, b, k) => 1 / (1 + Math.exp(-(t - a) / k)) - 1 / (1 + Math.exp(-(t - b) / k));
+    function battito(t, o) {
+      let y = G(t, 0.13, 0.08, 0.022);
+      y += o.pr ? -o.pr * W(t, 0.115, 0.165, 0.006) : 0;
+      y += G(t, -0.08, 0.175, 0.007) + G(t, o.R || 1.05, 0.195, 0.0085) + G(t, -0.22, 0.217, 0.008);
+      y += o.st ? o.st * W(t, 0.225, 0.40, 0.012) : 0;
+      y += G(t, o.T, 0.37, 0.042);
+      return y;
+    }
+    const pannelli = [
+      { lab: 'A', tit: 'Miopericardite: ST↑ concavo, PR↓ (D II)', rr: 0.72, f: t => battito(t, { pr: 0.07, st: 0.22, T: 0.32 }) },
+      { lab: 'B', tit: 'Fase subacuta: onde T negative (V4)', rr: 0.8, f: t => battito(t, { T: -0.32, R: 0.9 }) },
+      { lab: 'C', tit: 'BAV completo, scappamento a QRS largo', custom: 'bav' },
+      { lab: 'D', tit: 'TV non sostenuta', custom: 'tv' },
+    ];
+    const pxs = 200, mv = 70, durata = 2.3;
+    pannelli.forEach((p, i) => {
+      const ox = 12 + (i % 2) * 494, oy = 14 + Math.floor(i / 2) * 180, w = 482, h = 166;
+      el('rect', { x: ox, y: oy, width: w, height: h, fill: '#fff7f8' }, g);
+      el('rect', { x: ox, y: oy, width: w, height: h, fill: 'url(#ecgGrande)', stroke: '#ec8f9f', 'stroke-width': 1 }, g);
+      let f;
+      if (p.custom === 'bav') {
+        f = t => {
+          let y = 0;
+          for (let k = 0; k < 6; k++) y += G(t, 0.14, 0.1 + k * 0.56, 0.024);
+          for (const m of [0.55, 1.95]) { y += G(t, 0.95, m, 0.028) - G(t, 0.35, m + 0.06, 0.03) - G(t, 0.3, m + 0.3, 0.06); }
+          return y;
+        };
+      } else if (p.custom === 'tv') {
+        f = t => {
+          let y = 0;
+          y += battito(t - 0.05, { T: 0.28 });
+          for (let k = 0; k < 6; k++) { const m = 0.78 + k * 0.27; y += G(t, 0.85, m, 0.035) - G(t, 0.55, m + 0.1, 0.04); }
+          y += battito(t - 2.0, { T: 0.28 }) * (t > 1.95 ? 1 : 0);
+          return y * 0.8;
+        };
+      } else {
+        f = t => p.f(((t % p.rr) + p.rr) % p.rr);
+      }
+      const base = oy + h * (p.custom === 'tv' ? 0.6 : 0.62);
+      let d = '';
+      const N = 900;
+      for (let k = 0; k <= N; k++) { const t = k / N * durata; d += (k ? 'L' : 'M') + (ox + 10 + t * pxs).toFixed(1) + ' ' + (base - f(t) * mv).toFixed(1); }
+      el('path', { d, fill: 'none', stroke: '#16131a', 'stroke-width': 1.7, 'stroke-linejoin': 'round' }, g);
+      el('rect', { x: ox + 8, y: oy + 8, width: 22, height: 22, rx: 3, fill: '#b0122d' }, g);
+      const tl = el('text', { x: ox + 19, y: oy + 24, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 800, fill: '#fff' }, g); tl.textContent = p.lab;
+      const tt = el('text', { x: ox + 38, y: oy + 24, 'font-size': 12, 'font-weight': 700, fill: '#14325c' }, g); tt.textContent = p.tit;
+      // annotazioni
+      if (p.lab === 'A') {
+        const a1 = el('text', { x: ox + 10 + 0.14 * pxs, y: base + 30, 'font-size': 10, fill: '#b0122d', 'font-weight': 700, 'text-anchor': 'middle' }, g); a1.textContent = 'PR↓';
+        const a2 = el('text', { x: ox + 10 + 0.31 * pxs, y: base - 62, 'font-size': 10, fill: '#b0122d', 'font-weight': 700, 'text-anchor': 'middle' }, g); a2.textContent = 'ST↑';
+      }
+      if (p.lab === 'C') {
+        for (let k = 0; k < 4; k++) { const x = ox + 10 + (0.1 + k * 0.56) * pxs; const tx = el('text', { x, y: oy + h - 8, 'font-size': 10, fill: '#b0122d', 'font-weight': 700, 'text-anchor': 'middle' }, g); tx.textContent = 'P'; }
+      }
+    });
+  })();
+
+  /* ---------- RM ---------- */
+  (function () {
+    const g = document.getElementById('pannelliRM');
+    const rad = a => a * Math.PI / 180;
+    function settore(cx, cy, r1, r2, a1, a2) {
+      const p = (r, a) => [cx + r * Math.cos(rad(a)), cy + r * Math.sin(rad(a))];
+      const [x1, y1] = p(r2, a1), [x2, y2] = p(r2, a2), [x3, y3] = p(r1, a2), [x4, y4] = p(r1, a1);
+      const large = (a2 - a1) > 180 ? 1 : 0;
+      return `M${x1} ${y1} A${r2} ${r2} 0 ${large} 1 ${x2} ${y2} L${x3} ${y3} A${r1} ${r1} 0 ${large} 0 ${x4} ${y4} Z`;
+    }
+    const pannelli = [
+      { lab: 'A', tit: 'T2-STIR · edema', tipo: 't2', arco: [10, 85, 'tutto'] },
+      { lab: 'B', tit: 'LGE subepicardico', tipo: 'lge', arco: [5, 80, 'epi'] },
+      { lab: 'C', tit: 'LGE intramurale settale', tipo: 'lge', arco: [150, 230, 'mid'] },
+      { lab: 'D', tit: 'Infarto (confronto)', tipo: 'lge', arco: [65, 130, 'endo'] },
+    ];
+    const larg = 180;
+    pannelli.forEach((p, i) => {
+      const ox = 10 + i * (larg + 8), oy = 10, w = larg, h = 250;
+      const cx = ox + w / 2 + 12, cy = oy + 132;
+      const clipId = 'clipRM' + i;
+      const cp = el('clipPath', { id: clipId }, g); el('rect', { x: ox, y: oy, width: w, height: h, rx: 4 }, cp);
+      const pg = el('g', { 'clip-path': `url(#${clipId})` }, g);
+      el('rect', { x: ox, y: oy, width: w, height: h, fill: '#000' }, pg);
+      el('ellipse', { cx: ox + w / 2, cy: oy + 140, rx: 120, ry: 100, fill: 'url(#torace)' }, pg);
+      // polmoni scuri
+      el('ellipse', { cx: ox + w / 2 - 70, cy: oy + 120, rx: 34, ry: 60, fill: '#0b0b0b', filter: 'url(#sfumaRM2)' }, pg);
+      el('ellipse', { cx: ox + w / 2 + 84, cy: oy + 128, rx: 22, ry: 50, fill: '#0b0b0b', filter: 'url(#sfumaRM2)' }, pg);
+      const t2 = p.tipo === 't2';
+      const sangue = t2 ? '#151515' : '#9d9d9d';
+      const mioc = t2 ? '#6e6e6e' : '#121212';
+      // VD
+      el('path', { d: `M${cx - 40} ${cy - 50} C ${cx - 100} ${cy - 50} ${cx - 104} ${cy + 46} ${cx - 44} ${cy + 52} C ${cx - 66} ${cy + 20} ${cx - 66} ${cy - 20} ${cx - 40} ${cy - 50} Z`, fill: sangue, filter: 'url(#sfumaRM)' }, pg);
+      el('path', { d: `M${cx - 40} ${cy - 50} C ${cx - 100} ${cy - 50} ${cx - 104} ${cy + 46} ${cx - 44} ${cy + 52}`, fill: 'none', stroke: mioc, 'stroke-width': 4, filter: 'url(#sfumaRM)' }, pg);
+      // VS: anello
+      el('circle', { cx, cy, r: 50, fill: mioc, filter: 'url(#sfumaRM)' }, pg);
+      el('circle', { cx, cy, r: 33, fill: sangue, filter: 'url(#sfumaRM)' }, pg);
+      // muscoli papillari
+      el('circle', { cx: cx + 12, cy: cy + 18, r: 6, fill: mioc, filter: 'url(#sfumaRM)' }, pg);
+      el('circle', { cx: cx + 18, cy: cy - 14, r: 5, fill: mioc, filter: 'url(#sfumaRM)' }, pg);
+      // lesione
+      const [a1, a2, strato] = p.arco;
+      let r1 = 33, r2 = 50;
+      if (strato === 'epi') { r1 = 42; r2 = 50; } else if (strato === 'mid') { r1 = 38; r2 = 45; } else if (strato === 'endo') { r1 = 33; r2 = 43; }
+      const col = t2 ? '#d9d9d9' : '#f4f4f4';
+      el('path', { d: settore(cx, cy, r1, r2, a1, a2), fill: col, filter: 'url(#sfumaRM)', opacity: t2 ? 0.85 : 0.95 }, pg);
+      if (strato === 'epi') el('path', { d: settore(cx, cy, 40, 50, 25, 60), fill: '#fff', filter: 'url(#sfumaRM)' }, pg);
+      // rumore
+      el('rect', { x: ox, y: oy, width: w, height: h, filter: 'url(#rumoreRM)', opacity: 0.22 }, pg);
+      // freccia
+      const am = rad((a1 + a2) / 2);
+      const fx = cx + 74 * Math.cos(am), fy = cy + 74 * Math.sin(am);
+      const tx = cx + 54 * Math.cos(am), ty = cy + 54 * Math.sin(am);
+      el('line', { x1: fx, y1: fy, x2: tx, y2: ty, stroke: '#ffd34d', 'stroke-width': 2.4 }, pg);
+      el('path', { d: `M${tx} ${ty} l ${(-7 * Math.cos(am - 0.5)).toFixed(1)} ${(-7 * Math.sin(am - 0.5)).toFixed(1)} M${tx} ${ty} l ${(-7 * Math.cos(am + 0.5)).toFixed(1)} ${(-7 * Math.sin(am + 0.5)).toFixed(1)}`, stroke: '#ffd34d', 'stroke-width': 2.4, fill: 'none' }, pg);
+      const vd = el('text', { x: cx - 78, y: cy + 4, 'font-size': 9, fill: '#bbb', 'text-anchor': 'middle' }, pg); vd.textContent = 'VD';
+      // etichette
+      el('rect', { x: ox + 6, y: oy + 6, width: 20, height: 20, rx: 3, fill: '#b0122d' }, g);
+      const l = el('text', { x: ox + 16, y: oy + 21, 'text-anchor': 'middle', 'font-size': 12.5, 'font-weight': 800, fill: '#fff' }, g); l.textContent = p.lab;
+      const t = el('text', { x: ox + w / 2, y: oy + h + 18, 'text-anchor': 'middle', 'font-size': 11.5, 'font-weight': 700, fill: '#14325c' }, g); t.textContent = p.tit;
+      const s = el('text', { x: ox + w / 2, y: oy + h + 33, 'text-anchor': 'middle', 'font-size': 9.6, fill: '#5b5862' }, g);
+      s.textContent = ['iperintensità infero-laterale', 'risparmio del subendocardio', 'stria mesocardica', 'parte dal subendocardio'][i];
+    });
+
+    // bullseye
+    const bx = 10 + 4 * (larg + 8) + 8, bcx = bx + 100, bcy = 128;
+    const bt = el('text', { x: bcx, y: 22, 'text-anchor': 'middle', 'font-size': 11.5, 'font-weight': 700, fill: '#14325c' }, g); bt.textContent = 'Mappa a 17 segmenti';
+    el('rect', { x: bx - 6, y: 6, width: 20, height: 20, rx: 3, fill: '#b0122d' }, g);
+    const el5 = el('text', { x: bx + 4, y: 21, 'text-anchor': 'middle', 'font-size': 12.5, 'font-weight': 800, fill: '#fff' }, g); el5.textContent = 'E';
+    // angoli SVG: 0 = destra, 90 = basso. Segmento 1 (anteriore) in alto, setto a sinistra.
+    const anelli = [
+      { r1: 58, r2: 80, segs: [[1, 240, 300], [2, 180, 240], [3, 120, 180], [4, 60, 120], [5, 0, 60], [6, 300, 360]] },
+      { r1: 36, r2: 58, segs: [[7, 240, 300], [8, 180, 240], [9, 120, 180], [10, 60, 120], [11, 0, 60], [12, 300, 360]] },
+      { r1: 15, r2: 36, segs: [[13, 225, 315], [14, 135, 225], [15, 45, 135], [16, -45, 45]] },
+    ];
+    const intensita = { 5: 1, 11: 1, 6: 0.55, 12: 0.4, 4: 0.3, 16: 0.35 };
+    anelli.forEach(an => an.segs.forEach(([n, a1, a2]) => {
+      const v = intensita[n] || 0;
+      const fill = v ? `rgba(176,18,45,${0.25 + 0.75 * v})` : '#eef1f6';
+      el('path', { d: settore(bcx, bcy, an.r1, an.r2, a1, a2), fill, stroke: '#fff', 'stroke-width': 1.5 }, g);
+      const am = rad((a1 + a2) / 2), rm = (an.r1 + an.r2) / 2;
+      const tx = el('text', { x: (bcx + rm * Math.cos(am)).toFixed(1), y: (bcy + rm * Math.sin(am) + 3.5).toFixed(1), 'text-anchor': 'middle', 'font-size': 9.5, 'font-weight': 700, fill: v > 0.5 ? '#fff' : '#3f3c45' }, g); tx.textContent = n;
+    }));
+    el('circle', { cx: bcx, cy: bcy, r: 15, fill: '#eef1f6', stroke: '#fff', 'stroke-width': 1.5 }, g);
+    const t17 = el('text', { x: bcx, y: bcy + 3.5, 'text-anchor': 'middle', 'font-size': 9.5, 'font-weight': 700, fill: '#3f3c45' }, g); t17.textContent = '17';
+    const lbl = [['anteriore', bcx, bcy - 88], ['inferiore', bcx, bcy + 96], ['setto', bcx - 98, bcy + 3], ['laterale', bcx + 100, bcy + 3]];
+    lbl.forEach(([s, x, y]) => { const t = el('text', { x, y, 'text-anchor': 'middle', 'font-size': 9, fill: '#5b5862' }, g); t.textContent = s; });
+    const leg = el('g', {}, g);
+    [['LGE esteso', 1], ['LGE parziale', 0.45], ['assente', 0]].forEach(([s, v], k) => {
+      el('rect', { x: bx + 4, y: 252 + k * 15, width: 11, height: 11, rx: 2, fill: v ? `rgba(176,18,45,${0.25 + 0.75 * v})` : '#eef1f6', stroke: '#c9c5cc', 'stroke-width': 0.5 }, leg);
+      const t = el('text', { x: bx + 20, y: 261 + k * 15, 'font-size': 9.6, fill: '#3f3c45' }, leg); t.textContent = s;
+    });
+  })();
+})();
+</script>
+</body>
+</html>
