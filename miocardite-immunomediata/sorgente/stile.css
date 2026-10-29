@@ -1,0 +1,193 @@
+/* Vademecum Omnia Medicinae 2026–27 — Miocardite immunomediata
+   Foglio di stile per la stampa A4 (Chromium) */
+
+:root {
+  --burgundy: #900C3F;
+  --burgundy-chiaro: #f6e7ed;
+  --blu: #1F3A5F;
+  --blu-chiaro: #e8eef5;
+  --antracite: #2E2E33;
+  --grigio: #5f5f66;
+  --grigio-chiaro: #f2f2f3;
+  --ocra: #8a6a12;
+  --ocra-chiaro: #fbf4e0;
+  --verde: #2f6b4f;
+  --verde-chiaro: #e7f2ec;
+}
+
+@page {
+  size: A4;
+  margin: 17mm 15mm 16mm 15mm;
+  @top-left {
+    content: "VADEMECUM OMNIA MEDICINAE 2026–27";
+    font-family: "Source Sans 3", sans-serif; font-size: 7pt; font-weight: 600;
+    letter-spacing: 0.12em; color: #900C3F; vertical-align: bottom; padding-bottom: 3mm;
+  }
+  @top-right {
+    content: "Miocardite immunomediata";
+    font-family: "Source Sans 3", sans-serif; font-size: 7.5pt; font-style: italic;
+    color: #5f5f66; vertical-align: bottom; padding-bottom: 3mm;
+  }
+  @bottom-center {
+    content: counter(page);
+    font-family: "Source Sans 3", sans-serif; font-size: 8pt; color: #2E2E33;
+  }
+}
+@page :first {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0; background: #fff; color: var(--antracite);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 9.3pt; line-height: 1.36;
+  hyphens: auto; -webkit-hyphens: auto;
+  font-variant-numeric: lining-nums;
+  orphans: 2; widows: 2;
+}
+p { margin: 0 0 0.5em; text-align: justify; }
+p + p { text-indent: 0; }
+b, strong { font-weight: 700; }
+sup { font-size: 0.68em; line-height: 0; }
+sub { font-size: 0.68em; line-height: 0; }
+.cit { font-family: "Source Sans 3", sans-serif; font-size: 0.72em; color: var(--blu); vertical-align: super; line-height: 0; font-weight: 600; }
+abbr { text-decoration: none; }
+ul, ol { margin: 0.1em 0 0.55em; padding-left: 1.45em; }
+li { margin-bottom: 0.18em; text-align: justify; }
+li::marker { color: var(--burgundy); }
+
+/* ---------- colonne ---------- */
+.cols { column-count: 2; column-gap: 6.5mm; column-rule: 0.4pt solid #e2e2e5; column-fill: balance; }
+.cols > *:first-child { margin-top: 0; }
+
+/* ---------- frontespizio ---------- */
+.frontespizio { border-top: 4px solid var(--burgundy); padding-top: 6mm; margin-bottom: 6mm; }
+.frontespizio .volume {
+  font-family: "Source Sans 3", sans-serif; font-weight: 700; letter-spacing: 0.2em;
+  font-size: 8.5pt; color: var(--burgundy); text-transform: uppercase;
+}
+.frontespizio .sezione { font-family: "Source Sans 3", sans-serif; font-size: 8.5pt; color: var(--grigio); letter-spacing: 0.06em; margin-top: 1mm; }
+.frontespizio h1 {
+  font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 30pt; line-height: 1.04;
+  letter-spacing: 0.01em; color: var(--antracite); margin: 7mm 0 2mm;
+}
+.frontespizio .sottotitolo { font-size: 13pt; font-style: italic; color: var(--blu); margin: 0 0 5mm; }
+.frontespizio .autori { font-family: "Source Sans 3", sans-serif; font-size: 8.3pt; color: var(--grigio); border-top: 0.6pt solid #cfcfd4; padding-top: 2mm; }
+
+.abstract { background: var(--grigio-chiaro); border-left: 3px solid var(--blu); padding: 3mm 4mm; margin: 0 0 4mm; font-size: 8.8pt; }
+.abstract h4 { margin: 0 0 1.5mm; font-family: "Source Sans 3", sans-serif; font-size: 8.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blu); }
+.abstract p { margin-bottom: 0.35em; }
+
+.legenda-ev { font-size: 8pt; margin: 0 0 4mm; font-family: "Source Sans 3", sans-serif; color: var(--grigio); }
+
+/* ---------- titoli ---------- */
+section.capitolo { break-before: page; }
+section.capitolo.continua { break-before: auto; margin-top: 5mm; }
+.cap-testata { border-top: 2.5px solid var(--burgundy); padding-top: 2.2mm; margin-bottom: 3.5mm; break-after: avoid; }
+.cap-num { font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 8pt; letter-spacing: 0.22em; color: var(--burgundy); text-transform: uppercase; }
+h2 { font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 17pt; line-height: 1.1; margin: 1mm 0 0; color: var(--antracite); }
+h3 {
+  font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 10.6pt; color: var(--blu);
+  margin: 0.9em 0 0.35em; break-after: avoid; line-height: 1.2;
+}
+h3 .n { color: var(--burgundy); margin-right: 0.3em; }
+h4 {
+  font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 9.4pt; color: var(--antracite);
+  margin: 0.75em 0 0.25em; break-after: avoid;
+}
+h5 { font-family: "Source Sans 3", sans-serif; font-weight: 600; font-size: 9pt; color: var(--burgundy); margin: 0.6em 0 0.2em; break-after: avoid; }
+
+/* ---------- etichette di evidenza ---------- */
+.ev {
+  font-family: "Source Sans 3", sans-serif; font-size: 6.6pt; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0 0.35em; border-radius: 2px; white-space: nowrap; vertical-align: 0.08em;
+}
+.ev.fis { background: #e4e4e8; color: #3d3d44; }
+.ev.uomo { background: var(--blu-chiaro); color: var(--blu); }
+.ev.anim { background: var(--ocra-chiaro); color: var(--ocra); }
+.ev.ipo { background: #f1e6f7; color: #6a2f87; }
+.ev.lg { background: var(--burgundy-chiaro); color: var(--burgundy); }
+.ev.cons { background: var(--verde-chiaro); color: var(--verde); }
+
+/* ---------- box didattici ---------- */
+.box {
+  break-inside: avoid; margin: 0.4em 0 0.8em; padding: 2.2mm 3mm 1.6mm; font-size: 8.6pt; line-height: 1.32;
+  border-radius: 1.5px;
+}
+.box > .tit {
+  display: block; font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 7.4pt;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2mm;
+}
+.box p { margin-bottom: 0.35em; }
+.box ul, .box ol { margin-bottom: 0.2em; padding-left: 1.1em; }
+.box li { margin-bottom: 0.1em; }
+.box.kp  { background: var(--burgundy-chiaro); border-left: 3px solid var(--burgundy); }
+.box.kp > .tit { color: var(--burgundy); }
+.box.ri  { background: var(--blu-chiaro); border-left: 3px solid var(--blu); }
+.box.ri > .tit { color: var(--blu); }
+.box.mm  { background: #f4f1fa; border-left: 3px solid #5b3c8f; }
+.box.mm > .tit { color: #5b3c8f; }
+.box.ccf { background: var(--verde-chiaro); border-left: 3px solid var(--verde); }
+.box.ccf > .tit { color: var(--verde); }
+.box.ci  { background: var(--grigio-chiaro); border-left: 3px solid var(--antracite); }
+.box.ci > .tit { color: var(--antracite); }
+.box.ad  { background: var(--ocra-chiaro); border-left: 3px solid #c08a00; }
+.box.ad > .tit { color: var(--ocra); }
+.box.largo { column-span: all; }
+
+/* domande ECG / eco */
+.q5 { break-inside: avoid; margin: 0.25em 0 0.7em; border-top: 0.6pt solid #cfcfd6; padding-top: 1.2mm; }
+.q5 > .nome { font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 9.2pt; color: var(--burgundy); display: block; margin-bottom: 0.5mm; }
+.q5 dl { margin: 0; display: grid; grid-template-columns: 4.2mm 1fr; column-gap: 1mm; row-gap: 0.4mm; font-size: 8.7pt; line-height: 1.3; }
+.q5 dt { font-family: "Source Sans 3", sans-serif; font-weight: 700; color: var(--blu); font-size: 7.6pt; padding-top: 0.25mm; }
+.q5 dd { margin: 0; text-align: justify; }
+
+/* ---------- tabelle booktabs ---------- */
+.tab { break-inside: avoid; margin: 0.6em 0 0.9em; }
+.tab.largo { margin: 1mm 0 4mm; }
+.tab .didascalia, figure figcaption {
+  font-family: "Source Sans 3", sans-serif; font-size: 7.9pt; line-height: 1.3; color: var(--antracite); text-align: justify;
+}
+.tab .didascalia { margin-bottom: 1.2mm; }
+.tab .didascalia b, figure figcaption b { color: var(--burgundy); }
+table.bt { width: 100%; border-collapse: collapse; font-family: "Source Sans 3", sans-serif; font-size: 7.7pt; line-height: 1.25; }
+table.bt thead tr:first-child th { border-top: 1.1pt solid var(--antracite); }
+table.bt thead th { border-bottom: 0.6pt solid var(--antracite); text-align: left; padding: 1.2mm 1.3mm; font-weight: 700; color: var(--blu); vertical-align: bottom; }
+table.bt td { padding: 1mm 1.3mm; vertical-align: top; text-align: left; hyphens: auto; }
+table.bt tbody tr + tr td { border-top: 0.3pt solid #d9d9de; }
+table.bt tbody tr:last-child td { border-bottom: 1.1pt solid var(--antracite); }
+table.bt td:first-child { font-weight: 700; color: var(--antracite); }
+table.bt tr.sez td { background: var(--grigio-chiaro); font-weight: 700; color: var(--burgundy); border-top: 0.6pt solid #b9b9c0; }
+table.bt .nota { font-weight: 400; }
+
+/* ---------- figure ---------- */
+figure { margin: 0.6em 0 0.9em; break-inside: avoid; }
+figure.largo { margin: 1mm 0 4.5mm; }
+figure img { width: 100%; display: block; margin-bottom: 1.6mm; }
+figure figcaption { border-top: 0.6pt solid #cfcfd6; padding-top: 1.2mm; }
+figure .schematico {
+  font-family: "Source Sans 3", sans-serif; font-size: 6.8pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ocra); background: var(--ocra-chiaro); padding: 0 0.4em; border-radius: 2px; margin-left: 0.3em;
+}
+.rif-fig { hyphens: none; white-space: nowrap; font-family: "Source Sans 3", sans-serif; font-weight: 700; color: var(--burgundy); font-size: 0.92em; }
+
+/* ---------- casi clinici ---------- */
+.caso { break-inside: auto; border: 0.8pt solid #c9c9cf; border-top: 3px solid var(--blu); padding: 2.2mm 3mm 1.5mm; margin: 0.4em 0 0.9em; font-size: 8.8pt; }
+.caso .tit { font-family: "Source Sans 3", sans-serif; font-weight: 700; font-size: 9.6pt; color: var(--blu); display: block; margin-bottom: 1mm; }
+.caso .passo { font-family: "Source Sans 3", sans-serif; font-weight: 700; color: var(--burgundy); font-size: 8pt; }
+
+/* ---------- bibliografia ---------- */
+ol.biblio { padding-left: 1.6em; font-size: 7.9pt; line-height: 1.3; }
+ol.biblio li { margin-bottom: 0.32em; text-align: left; hyphens: manual; }
+ol.biblio .doi { font-family: "Source Sans 3", sans-serif; color: var(--blu); font-size: 0.95em; word-break: break-all; }
+.nota-fonti { font-size: 8pt; color: var(--grigio); }
+
+.piccolo { font-size: 8.2pt; }
+.centro { text-align: center; }
+.evita { break-inside: avoid; }
+.spazio { height: 2mm; }
+.formula { text-align: center; font-style: italic; margin: 0.4em 0 0.6em; font-size: 9.2pt; }

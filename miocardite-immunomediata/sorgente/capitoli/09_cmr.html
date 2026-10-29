@@ -1,0 +1,74 @@
+<section class="capitolo" id="cap9">
+<div class="cap-testata"><div class="cap-num">Capitolo IX</div><h2>Risonanza magnetica cardiaca</h2></div>
+<div class="cols">
+<p>La CMR è la tecnica che ha cambiato la diagnosi di miocardite: è l'unico esame non invasivo che <b>caratterizza il tessuto</b>, distinguendo edema, necrosi e fibrosi, e che misura i volumi ventricolari con elevata riproducibilità. Le linee guida ESC 2025 le attribuiscono un ruolo centrale nella diagnosi e nel follow-up<span class="cit">1</span>. Per interpretarla è indispensabile capire che cosa genera il segnale.</p>
+
+<h3><span class="n">9.1</span>Principi fisici essenziali</h3>
+<p><b>Risonanza magnetica nucleare.</b> I nuclei di idrogeno (protoni), abbondantissimi nell'acqua e nei grassi, possiedono uno spin e si comportano come piccoli magneti. In un campo magnetico statico intenso (B₀: 1,5 o 3 tesla) si orientano con un lieve eccesso in direzione parallela al campo, generando una <b>magnetizzazione netta longitudinale</b> (M<sub>z</sub>), e precedono attorno a B₀ alla <b>frequenza di Larmor</b> (ω = γ·B₀; circa 64 MHz a 1,5 T). Un impulso a radiofrequenza alla frequenza di Larmor ribalta la magnetizzazione nel piano trasversale (M<sub>xy</sub>), dove la sua rotazione induce un segnale in una bobina ricevente. Gradienti di campo codificano la posizione spaziale. Per seguire il cuore in movimento le acquisizioni sono sincronizzate con l'ECG e con l'apnea.</p>
+<p><b>Rilassamento T1 e T2.</b> Dopo l'impulso il sistema torna all'equilibrio con due processi indipendenti:</p>
+<ul>
+<li><b>T1</b> (longitudinale, spin-reticolo): recupero di M<sub>z</sub>, M<sub>z</sub>(t) = M₀(1 − e<sup>−t/T1</sup>); T1 è il tempo per recuperare circa il 63%. Dipende dall'ambiente molecolare: l'<b>acqua libera</b> ha T1 lungo.</li>
+<li><b>T2</b> (trasversale, spin-spin): decadimento di M<sub>xy</sub> per perdita di coerenza di fase, M<sub>xy</sub>(t) = M₀·e<sup>−t/T2</sup>; T2 è il tempo per scendere a circa il 37%. Anche il T2 si allunga con l'aumento di <b>acqua libera</b>.</li>
+</ul>
+<p>Un tessuto <b>edematoso</b> ha quindi T1 e T2 più lunghi; un tessuto <b>fibrotico</b> ha T1 nativo più lungo (espansione dello spazio extracellulare) ma T2 poco modificato. È la base fisica della distinzione tra infiammazione acuta e cicatrice.</p>
+<p><b>Immagini T2-pesate.</b> Sequenze a sangue nero con soppressione del grasso (STIR): l'edema appare iperintenso. Sono qualitative, sensibili ad artefatti e richiedono un riferimento (rapporto di segnale miocardio/muscolo scheletrico ≥2 per l'edema globale).</p>
+<p><b>Mappe T1 e T2</b> (<i>mapping</i>). Invece di un'immagine «pesata», si acquisiscono più immagini a tempi diversi e si calcola, pixel per pixel, il valore di T1 o T2 in millisecondi, rappresentato in una mappa a colori. Il <b>T1 mapping</b> usa tipicamente sequenze a inversione-recupero di tipo Look-Locker modificato (MOLLI): un impulso di 180° inverte la magnetizzazione e il recupero viene campionato a vari tempi; il <b>T2 mapping</b> usa preparazioni T2 a durata variabile. I valori normali <b>dipendono dallo scanner, dall'intensità di campo e dalla sequenza</b>: ogni centro deve usare i propri intervalli di riferimento<span class="cit">10</span>. Un T2 aumentato è un marcatore relativamente specifico di edema (infiammazione attiva); un T1 nativo aumentato indica edema, necrosi o fibrosi.</p>
+<p><b>Gadolinio.</b> I mezzi di contrasto a base di gadolinio sono chelati paramagnetici che <b>accorciano il T1</b> dei protoni vicini, rendendo i tessuti che li contengono più luminosi nelle immagini T1-pesate. Sono <b>extracellulari</b>: distribuiti nel plasma e nell'interstizio, non attraversano membrane cellulari integre.</p>
+<p><b>Volume extracellulare (ECV).</b> Confrontando il T1 prima e dopo il contrasto nel miocardio e nel sangue, e correggendo per l'ematocrito, si stima la frazione del miocardio occupata dallo spazio extracellulare:</p>
+<p class="formula">ECV = (1 − Ht) × [ΔR1<sub>miocardio</sub> / ΔR1<sub>sangue</sub>], dove R1 = 1/T1 e ΔR1 = R1<sub>post</sub> − R1<sub>pre</sub></p>
+<p>Il valore normale è circa il 25% (dipendente dal centro). L'ECV aumenta con l'edema extracellulare (fase acuta) e con la fibrosi interstiziale (fase cronica), ed è indipendente dalla «finestra» scelta dall'operatore.</p>
+
+<h3><span class="n">9.2</span>Late Gadolinium Enhancement</h3>
+<p><b>Che cosa significa.</b> L'LGE («captazione tardiva di gadolinio») è l'iperintensità di regioni miocardiche nelle immagini T1-pesate acquisite <b>10–20 minuti dopo</b> l'iniezione del contrasto.</p>
+<p><b>Come si distribuisce il contrasto.</b> Nel miocardio sano i cardiomiociti occupano gran parte del volume e lo spazio extracellulare è piccolo; il gadolinio entra e ne esce rapidamente (<i>wash-in</i> e <i>wash-out</i>). Nella <b>necrosi acuta</b> le membrane sono rotte e il gadolinio entra nello spazio prima intracellulare: il volume di distribuzione aumenta. Nella <b>fibrosi</b> il collagene ha sostituito i miociti e lo spazio extracellulare è ampio. In entrambi i casi, a distanza di minuti, la regione contiene più gadolinio e lo elimina più lentamente: il suo T1 è più corto.</p>
+<p><b>Come si acquisisce il segnale.</b> Si usa una sequenza a <b>inversione-recupero</b>: un impulso di 180° inverte la magnetizzazione; dopo un tempo di inversione (TI) scelto in modo che il miocardio sano passi per lo zero (<i>nulling</i>), si acquisisce l'immagine. Il miocardio sano appare nero; le regioni con più gadolinio, avendo T1 più breve, hanno già recuperato magnetizzazione e appaiono bianche (<a class="rif-fig">Figura 10</a>, pannello in basso). Una scelta errata del TI può simulare o nascondere l'LGE; le sequenze sensibili alla fase (PSIR) riducono questa dipendenza.</p>
+<p><b>Come riconoscerlo e interpretarlo.</b> Si descrivono: <b>sede</b> (segmenti secondo il modello a 17 segmenti), <b>distribuzione transmurale</b> (subendocardica, mesoparietale, subepicardica, transmurale), <b>pattern</b> (focale, lineare, a chiazze, diffuso) ed <b>estensione</b> (percentuale della massa ventricolare, con metodi semiautomatici a soglia).</p>
+<p><b>LGE ≠ infiammazione attiva.</b> L'LGE indica espansione dello spazio extracellulare: nella fase acuta riflette necrosi ed edema (e può ridursi nel tempo); nella fase cronica riflette fibrosi cicatriziale. Una cicatrice di una miocardite di anni prima resta LGE-positiva senza alcuna infiammazione in corso. Per affermare l'attività servono marcatori di <b>edema</b> (T2) concordanti.</p>
+
+<h4>Pattern ischemici e non ischemici</h4>
+<p>Nell'<b>infarto</b> la necrosi inizia nel subendocardio (lo strato più vulnerabile, perfuso per ultimo e con maggiore stress parietale) e procede verso l'epicardio con la durata dell'ischemia (fenomeno del «fronte d'onda»): l'LGE ischemico <b>coinvolge sempre il subendocardio</b>, può essere transmurale e rispetta un <b>territorio coronarico</b>. Nella <b>miocardite</b> il danno è tipicamente <b>subepicardico</b> (spesso parete infero-laterale basale e media) o <b>mesoparietale</b> (setto), risparmiando il subendocardio, e non segue i territori coronarici.</p>
+<p><b>Eccezioni e limiti.</b> La miocardite eosinofila può essere subendocardica diffusa con trombi; la miocardite a cellule giganti e le forme fulminanti possono essere transmurali; la <b>sarcoidosi</b> dà LGE a chiazze, spesso al setto basale e al lato destro del setto, talvolta subendocardico o transmurale; l'amiloidosi dà LGE subendocardico diffuso non territoriale; un infarto da embolia coronarica in una coronaria «normale» (MINOCA) può avere sede atipica. Il pattern orienta, ma non sostituisce il contesto clinico.</p>
+</div>
+
+<figure class="largo">
+<img src="figure/fig10_lge.svg" alt="Figura 10">
+<figcaption><b>Figura 10 — LGE: pattern ischemici e non ischemici</b><span class="schematico">Schema didattico</span>. In alto, sezioni in asse corto medio-ventricolare (con il ventricolo destro a sinistra dell'osservatore) e i territori coronarici di riferimento (DA, discendente anteriore; Cx, circonflessa; CD, coronaria destra). (a) Infarto subendocardico nel territorio della discendente anteriore. (b) Infarto transmurale infero-laterale. (c) Miocardite: LGE subepicardico infero-laterale. (d) Miocardite: LGE mesoparietale settale lineare. (e) Sarcoidosi: LGE a chiazze multifocale con coinvolgimento del setto e del lato destro del setto. In basso, curve di recupero della magnetizzazione longitudinale dopo l'impulso di inversione: al tempo di inversione scelto il miocardio sano è a zero (nero), il miocardio con più gadolinio (T1 più breve) ha già recuperato (bianco). Schemi originali, non immagini di pazienti.</figcaption>
+</figure>
+
+<div class="cols">
+<h3><span class="n">9.3</span>Criteri di Lake Louise aggiornati (2018)</h3>
+<p>I criteri originali del 2009 richiedevano due su tre tra edema in T2, enhancement precoce e LGE. L'aggiornamento del 2018 integra le tecniche di mapping<span class="cit">9</span> (<a class="rif-fig">Figura 11</a>):</p>
+<ul>
+<li><b>Criterio T2-based (edema)</b>: aumento regionale o globale del T2 nel mapping, oppure iperintensità regionale o globale nelle immagini T2-pesate.</li>
+<li><b>Criterio T1-based (danno non ischemico)</b>: aumento del T1 nativo o dell'ECV, oppure LGE con distribuzione non ischemica.</li>
+</ul>
+<p><b>Regola diagnostica.</b> La presenza di <b>almeno un criterio T2-based e almeno un criterio T1-based</b> sostiene con elevata specificità la diagnosi di infiammazione miocardica acuta. La presenza di un solo tipo di marcatore può ancora supportare la diagnosi in un contesto clinico appropriato, ma con specificità minore<span class="cit">9</span>.</p>
+<p><b>Criteri di supporto.</b> Versamento pericardico o LGE/edema pericardico (pericardite associata); disfunzione sistolica del VS, regionale o globale.</p>
+<p><b>Prestazioni.</b> Rispetto ai criteri del 2009, l'introduzione del mapping aumenta la sensibilità, soprattutto nelle forme con edema diffuso non riconoscibile visivamente. La specificità resta elevata quando i due criteri coesistono. La sensibilità è inferiore nelle presentazioni con scompenso cronico o aritmie, nelle quali l'infiammazione può essere modesta o a chiazze.</p>
+<p><b>Influenza del timing.</b> L'edema è massimo nelle prime settimane e si riduce progressivamente; un esame eseguito tardi può risultare negativo per i criteri T2 pur in presenza di LGE. L'esame andrebbe eseguito precocemente, idealmente entro le prime 2–3 settimane dai sintomi, nel paziente stabile; anche una terapia corticosteroidea iniziata prima dell'esame riduce l'edema.</p>
+<p><b>Limiti.</b> Valori di mapping dipendenti dal sistema; artefatti in presenza di aritmie o di difficoltà all'apnea; impossibilità di distinguere l'eziologia (virale, autoimmune, da ICI); controindicazioni (alcuni dispositivi, insufficienza renale grave per il contrasto, instabilità emodinamica). <b>Una CMR negativa non esclude</b> una miocardite a chiazze di piccola estensione o eseguita fuori dalla finestra temporale.</p>
+
+<figure>
+<img src="figure/fig11_lakelouise.svg" alt="Figura 11">
+<figcaption><b>Figura 11 — Criteri di Lake Louise 2018.</b> A sinistra, i marcatori T2-based (T2 mapping, immagini T2-pesate) che documentano l'edema; a destra, i marcatori T1-based (T1 nativo, ECV, LGE non ischemico) che documentano il danno. Un marcatore per gruppo: elevata specificità per infiammazione acuta. In basso, i criteri di supporto. I mini-grafici indicano lo spostamento dei valori rispetto all'intervallo di riferimento locale (non sono valori assoluti universali). Schema originale.</figcaption>
+</figure>
+
+<div class="box ci"><span class="tit">Come interpretare un referto CMR</span>
+<ol>
+<li><b>Funzione</b>: volumi, FEVS, FEVD, cinetica regionale.</li>
+<li><b>Edema</b> (T2): presente? globale o regionale? → attività.</li>
+<li><b>Danno</b> (T1/ECV/LGE): sede e pattern → ischemico o non ischemico?</li>
+<li><b>Pericardio</b>: versamento, enhancement.</li>
+<li><b>Sintesi</b>: Lake Louise soddisfatti (2/2, 1/2, 0/2) e coerenza con il quadro clinico.</li>
+<li><b>Prognosi</b>: estensione e sede dell'LGE; confronto con esami precedenti.</li>
+</ol>
+</div>
+
+<h3><span class="n">9.4</span>Il valore prognostico della CMR</h3>
+<p><b>LGE ed eventi.</b> In una coorte di miocarditi virali documentate con biopsia, la presenza di LGE era il miglior predittore indipendente di mortalità per tutte le cause e cardiaca, superiore alla FEVS e alla classe funzionale<span class="cit">12</span> <span class="ev uomo">Uomo</span>.</p>
+<p><b>Sede della fibrosi.</b> L'LGE <b>mesoparietale settale</b> (o antero-settale) si associa a prognosi peggiore rispetto all'LGE subepicardico infero-laterale isolato. Una spiegazione proposta è che il setto contenga il sistema di conduzione e una massa miocardica critica per il rientro <span class="ev ipo">Ipotesi</span>.</p>
+<p><b>Funzione ventricolare.</b> FEVS ridotta e mancato recupero sono predittori di eventi; ma pazienti con FEVS conservata e LGE esteso restano a rischio aritmico.</p>
+<p><b>Persistenza delle alterazioni.</b> Nella coorte ITAMY (CMR entro una settimana dai sintomi e ripetuta a sei mesi), l'edema scompariva nella maggior parte dei pazienti; il profilo «<b>LGE persistente senza edema</b>» a sei mesi, cioè cicatrice definitiva, si associava a prognosi peggiore, così come l'aumento dell'estensione dell'LGE<span class="cit">11</span> <span class="ev uomo">Uomo</span>.</p>
+<p><b>Follow-up.</b> Le linee guida ESC 2025 raccomandano la rivalutazione clinica e strumentale, CMR compresa, entro sei mesi dal ricovero indice<span class="cit">1</span> <span class="ev lg">ESC 2025</span>. Il controllo serve a documentare la risoluzione dell'edema, quantificare la cicatrice residua, rivalutare la funzione e informare le decisioni su attività sportiva, terapia e prevenzione della morte improvvisa.</p>
+</div>
+</section>
